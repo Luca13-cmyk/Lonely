@@ -40,7 +40,32 @@
     <link href="pace2/themes/red/pace-theme-big-counter.css" rel="stylesheet" />
     
 
+	<style>
 	
+	#password
+	{
+		border-radius: 8px;
+		border: none;
+		outline: none;
+		padding: 5px;
+	}
+	#password:focus, 
+	#password:hover
+	{
+		border: 2px solid red;
+
+	}
+	#aviso_switch
+	{
+		color: red;
+		margin-left: 15px;
+	}
+	.fnt-green
+	{
+		color: aquamarine !important;
+	}
+	
+	</style>
 
 </head>
 <body>
@@ -112,11 +137,19 @@
 					<div class="panel accelerate">
 						<header>
 							<h1>Lone<em>ly</em></h1>
+
+							<hr />
+							<section id="login">
+								<b>Senha: </b>
+								<input type="password" name="password" id="password">
+								<b id="aviso_switch">Trancado</b>
+								
+							</section>
 						</header>
 						
 						<ul class="links">
-							<li><a class="github" href="Lonely.html">Home</a></li>
-							<li><a class="github" target="_blank" href="https://github.com/Luca13-cmyk?tab=repositories">GitHub</a></li>
+							<li><a data-link_index="0" class="github" href="#">Home</a></li>
+							<li><a data-link_index="1" class="github" target="_blank" href="#">GitHub</a></li>
 						</ul>
 					</div>
 				</div>
@@ -236,6 +269,13 @@
 
 	
 	</script>
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+	<script src="JS/md5.min.js"></script>
+	
+	<script src="JS/lg.js"></script>
 
 </body>
 </html>
