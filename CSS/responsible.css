@@ -1,0 +1,23 @@
+@media screen and (max-width: 800px) 
+{
+     .fa-bars 
+     {
+         display: block !important;
+     }
+     .nav
+     {
+         display:none;
+     }
+     #navbar-1
+     {
+         display: block !important;
+     }
+     #navbar-2
+     {
+         display: none !important;
+     }
+     .dropdown
+     {
+         display: none;
+     }
+}

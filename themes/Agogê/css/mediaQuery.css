@@ -1,0 +1,42 @@
+
+
+/* MEDIA QUERY */
+
+
+@media screen and (max-width: 1000px)
+{
+	.pad-container-per {
+		display: none !important;
+	}
+	.fa-align-right {
+		display: block !important;
+	}
+	#hd-1
+	{
+		height: 45px !important;
+	}
+	#imagens
+	{
+		margin-top: 55px;
+	}
+}
+
+
+@media screen and (max-width: 1080px)
+{
+	.pad-container-per{
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 1276px)
+{
+	.pad-container-per {
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 996px;
+	}
+}

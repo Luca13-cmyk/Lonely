@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App YTB</title>
+	<link rel="shortcut icon" href="/icon_title/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="ferramentas.css">
+    <script src="modernizr-custom.js"></script>
+    <script src="yepnope.js"></script>
+    <style>
+        body
+        {
+            background: #000;
+            
+        }
+        /* MENU */
+        header
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background: #222;
+            z-index: 100;
+            transform: translateX(-100%);
+            /* transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); */
+            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* height: auto; */
+            /* padding: 20px 50px; */
+        }
+        header.menu-open-per
+        {
+            transform: translateX(0);
+        }
+        header .menu
+        {
+            /* border-left: 2px solid grey;
+            border-right: 2px solid grey; */
+            height: auto;
+            
+        }
+        header .menu .row
+        {
+            align-items: center;
+            justify-content: center;
+            
+        }
+        
+        header .menu nav .boxes-per
+        {
+            margin-top: 25px;
+            margin-left: 25px;
+        }
+        
+        /* BOXES CARD */
+
+        .boxes-per:hover .card
+        {
+            transform: scale(1.045);
+            /* box-shadow: 5px 5px 12px rgb(71, 71, 71); */
+            box-shadow: 5px 5px 12px rgb(3, 3, 3);
+            
+
+        }
+        .boxes-per:nth-child(1) .card
+        {
+            background: rgb(24, 250, 3);
+            color: #111 !important;
+            font-family: 'Roboto', sans-serif;
+        }
+        .boxes-per:nth-child(2) .card
+        {
+            background: rgb(89, 22, 153)!important;
+            color: #fff !important;
+        }
+        .boxes-per:nth-child(3) .card
+        {
+            background: rgb(44, 44, 44);
+            color: #fff !important;
+
+        }
+        .boxes-per:nth-child(4) .card
+        {
+            background: rgb(230, 13, 219);
+            color: #111 !important;
+
+        }
+        .boxes-per:nth-child(5) .card
+        {
+            background: rgb(230, 226, 13)!important;
+            color: #111 !important;
+
+        }
+        .boxes-per:nth-child(6) .card
+        {
+            background: rgb(230, 11, 40);
+            color: #fff !important;
+
+        }
+        .boxes-per:nth-child(7) .card
+        {
+            background: rgb(4, 52, 209);
+            color: #fff !important;
+            
+
+        }
+        .boxes-per:nth-child(8) .card
+        {
+            background: rgb(2, 2, 2);
+            border: 1px solid grey;
+            color: #fff !important;
+
+        }
+
+        /* MINI MENU */
+
+main .mini-menu
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 45px;
+    /* background: #ccc; */
+
+}
+main .mini-menu .toggle-menu-per
+
+{
+    float: right;
+    margin-right: 15px;
+    margin-top: 5px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+
+}
+main .mini-menu .toggle-menu-per i.fa-align-right
+{
+    color: #fff;
+    font-size: 24px;
+}
+.input-light-per
+{
+    height: 30px !important;
+    width: 45% !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    background-color: #444 !important;
+}
+button[data-toggle-bar-video="toggle"]
+{
+    height: 30px !important; 
+    margin-right: 15px;
+
+}
+.fa-search
+{
+    margin-left: 10px;
+    margin-bottom: 14px;
+    color: #fff;
+    fill: #fff;
+    cursor: pointer;
+
+}
+  .fa-search:hover
+{
+    color: red !important;
+}
+.activeToggleVideo
+{
+    color: red !important;
+    
+}
+.close1
+{
+    cursor: not-allowed !important;
+}
+.fa-plus
+{
+    font-size: 24px;
+    color: #fff;
+    margin-left: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.fa-plus:hover
+{
+    color: red;
+}
+section[data-drag="move"]
+{
+    border-radius: 8px;
+    width: 50%;
+    height: 465px;
+    cursor: move;
+   
+
+    
+    
+
+}
+
+section[data-drag="move"] .container-video
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+}
+section[data-drag="move"] .container-video .fa-times
+{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    color: rgb(200, 200, 200);
+    cursor: pointer;
+}
+section[data-drag="move"] .container-video .fa-times:hover
+{
+    color: #fff;
+}
+section[data-drag="move"] .container-video .bar-video
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+
+    /* background: #ccc; */
+}
+section[data-drag="move"] .container-video .bar-video button,
+section[data-drag="move"] .container-video .bar-video input
+{
+        display: none;
+}
+section[data-drag="move"] .container-video iframe
+{
+    width: 90%;
+    height: 84%;
+    position: absolute;
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+}
+
+/* ******* MODAL ******** */
+md-backdrop
+{
+    display: block !important;
+}
+#modal
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1700;
+
+    
+
+}
+#modal-content
+{
+    background: rgb(3, 3, 3);
+    
+    padding: 10px;
+    max-width: 700px;
+    max-height: 700px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    
+    border: 2px solid #fff;
+    
+
+}
+#modal-style
+{
+    padding: 20px 50px;
+    color: #fff;
+
+}
+.close-modal
+{
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    color: #dcdcdcdc;
+    cursor: pointer;
+}
+.close-modal:hover
+{
+    color: #fff;
+}
+
+
+
+/*  ******** END MODAL ********* */
+
+/* SCROLLBARS */
+
+::-webkit-scrollbar
+{
+    width: 7px;
+    height: 4px;
+    
+    
+}
+::-webkit-scrollbar-thumb
+{
+    background:  #444;
+    border-radius: 6px;
+    
+}
+
+@media screen and (min-width: 1535px) {
+    header .menu 
+    {
+        padding: 20px 50px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .row 
+    {
+        padding: 35px;
+    }
+    header .menu nav .boxes-per 
+    {
+    margin-top: 50px;
+    margin-left: 25px;
+    }
+}
+@media screen and (min-width: 1225px) and (max-width: 1530px) {
+    header .menu nav .boxes-per 
+    {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    }
+}
+        
+    </style>    
+</head>
+<body class="fnt-roboto-per">
+    <!-- NO-JS -->
+    <script>
+        // without JS
+        
+        
+        var hTmL = document.documentElement;
+        hTmL.className = hTmL.className.replace(/(^|\s)no-js(\s|$)/, '$1');
+        
+        
+        
+    </script>
+    <!-- start loader -->
+    <script>
+        // LOADER 
+        
+        function GetBrowserInfo() {
+            var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+            
+            var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+            var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+            
+            var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+            var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+            if (isOpera) {
+                return 1;
+            }
+            else if (isFirefox) {
+                return 2;
+            }
+            else if (isChrome) {
+                return 3;
+            }
+            else if (isSafari) {
+                return 4;
+            }
+            else if (isIE) {
+                return 5;
+            }
+            else {
+                return 0;
+            }
+        } 
+        
+        if (GetBrowserInfo() === 3 || GetBrowserInfo() === 4 || GetBrowserInfo() === 1) {
+            var body = document.getElementsByTagName("body")[0];
+            body.innerHTML += "<div id=\"pageloader-overlay\" class=\"visible incoming\"><div class=\"loader-wrapper-outer\"><div class=\"loader-wrapper-inner\"><div class=\"loader\"></div></div></div></div>"
+            
+        }
+        
+        
+    </script>
+	 <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap" style=""></md-backdrop>	
+        <div id="modal">
+            <div id="modal-content">
+                <i class="fas fa-times close-modal"></i>
+                <div id="modal-style">
+                    <b>Isso é um pequeno aplicativo web para ver videos sem travar, do youtube. Ele salva os dados automaticamente. Se quiser limpar, no menu tem a opção limpar dados. Ele não foi trabalhado para ser responsivo, por isso, só deve ser usado em telas com boa largura<br /><em style="color: red;"><small>Desenvolvido por Luca Negrette</b>
+                </div>
+                
+            </div>
+        </div>
+    <header data-sidebar-per="menu">
+        <div class="menu">
+            <nav class="row clearfix">
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <iframe src="youtube2.html" frameborder="0" height="" ></iframe>
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="">
+                                <button data-play="play-per" role="button" class="btn-dark-per bd-radius-per-2 btn-hg-45px-per animation-cover-per wgh-bold-per" type="button">Continuar Aplicativo
+                                    <span class=""><i class="fas fa-play"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="">
+                                <button role="button" class="btn-dark-per bd-radius-per-2 btn-hg-45px-per animation-cover-per wgh-bold-per" type="button">Meus vídeos
+                                    <span class=""><i class="fas fa-align-center"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="">
+                                <button role="button" class="btn-dark-per bd-radius-per-2 btn-hg-45px-per animation-cover-per wgh-bold-per" type="button">Menu Configurações
+                                    <span class=""><i class="fas fa-align-justify"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="">
+                                <button role="button" class="btn-dark-per bd-radius-per-2 btn-hg-45px-per animation-cover-per wgh-bold-per" type="button">Login Usuário (indisponível)
+                                    <span class=""><i class="fas fa-user"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxes-per">
+                    <div class="card" style="width: 18rem;">
+                        <img src="img/880119.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="">
+                                <button role="button" class="btn-dark-per bd-radius-per-2 btn-hg-45px-per animation-cover-per wgh-bold-per" type="button">Login Usuário (indisponível)
+                                    <span class=""><i class="fas fa-user"></i></span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="mini-menu">
+                    <i class="fas fa-plus"></i>
+                <button class="toggle-menu-per" type="button" role="button"><i class="fas fa-align-right "></i></button>
+            </div>
+            <section data-drag="move" class="ui-widget-content" data-vid="video">
+                <div class="container-video">
+                    <i class="fas fa-times close1"></i>
+                    <iframe src="https://www.youtube.com/embed/7TaklJatpY8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="bar-video" data-toggleVideo="toggle">
+
+                        <i data-showToggle="show" class="fas fa-search"></i>
+                        <input  class="input-light-per toggleVideo" type="text">
+
+                        <button data-toggle-bar-video="toggle" type="button" role="button" class="toggleVideo btn-blue-per btn-hg-25px-per bd-radius-per-4">Trocar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+    </main>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script> window.jQuery || document.write('<script type="text/javascript" src="jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="utilies.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+    <script>
+        
+        (function(){
+            
+            function init() {
+               
+                var $window = $(window);
+                var $draggable = $("section[data-drag=\"move\"]");
+                var $toggleVideo = $("i[data-showToggle=\"show\"]");
+                var $inputToggle = $(".toggleVideo");
+                var $plus = $(".fa-plus");
+                var $container = $(".container");
+                var $hamburger = $(".toggle-menu-per");
+                // variables area END
+                function JqueryUIp(){
+                   
+                 $draggable = $("section[data-drag=\"move\"]");   
+                 $draggable.resizable();
+                 $draggable.draggable({ scroll: true });
+                    
+                };
+                JqueryUIp();
+                
+                
+                $hamburger.on("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $("header[data-sidebar-per=\"menu\"]").addClass("menu-open-per");
+
+                }); // show/hide MENU
+                $("button[data-play=\"play-per\"]").on("click", function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $("header[data-sidebar-per=\"menu\"]").removeClass("menu-open-per");
+
+                });
+
+
+                
+                $window.on("load", function(){
+                    
+                    $("div[id=\"pageloader-overlay\"]").fadeOut(1200);
+                    if (localStorage.vid) $("iframe").attr("src", localStorage.vid);
+                    
+                    
+                    
+                
+                }); // DOM LOADER
+
+                $(".close-modal").on("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $("#modal").remove();
+                    $("md-backdrop").remove();
+
+                }); //close modal
+
+                function toggleVi(){
+                if ($("section[data-vid").length === 1){
+
+                $("i[data-showToggle='show']").on("click", function(e){
+                    
+                    $(this).siblings(".toggleVideo").toggle();
+                    $(this).toggleClass("activeToggleVideo");
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                });
+                $("button[data-toggle-bar-video=\"toggle\"]").on("click", function(){
+                    let $val = $(this).siblings(".toggleVideo").val();
+                    $(this).parent().siblings("iframe").attr("src", $val);
+                    saveVideo($val);
+                });
+               
+                }
+                else if ($("section[data-vid]").length === 2){
+
+                $('i[data-showToggle="show' + ($("section[data-vid]").length)  + '"]').on("click", function(e){
+                    
+                    $(this).siblings(".toggleVideo").toggle();
+                    $(this).toggleClass("activeToggleVideo");
+                    e.stopPropagation();
+                    e.preventDefault();
+
+
+                });
+                
+                
+                $(".close2").on("click", function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $(this).parent().parent().detach();
+                });
+                $("button[data-toggle-bar-video=\"toggle2\"]").on("click", function(){
+                    let $val = $(this).siblings(".toggleVideo").val();
+                    $(this).parent().siblings("iframe").attr("src", $val);
+                    saveVideo($val);
+                    
+                });
+                }
+                else if ($("section[data-vid]").length === 3){
+                    $('i[data-showToggle="show' + ($("section[data-vid]").length)  + '"]').on("click", function(e){
+                    
+                    $(this).siblings(".toggleVideo").toggle();
+                    $(this).toggleClass("activeToggleVideo");
+                    e.stopPropagation();
+                    e.preventDefault();
+                        
+                });
+                $(".close3").on("click", function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $(this).parent().parent().detach();
+                    
+                });
+                $("button[data-toggle-bar-video=\"toggle3\"]").on("click", function(){
+                    let $val = $(this).siblings(".toggleVideo").val();
+                    $(this).parent().siblings("iframe").attr("src", $val);
+                    saveVideo($val);
+                    
+                });
+                }
+                else if ($("section[data-vid]").length === 4){
+                    $('i[data-showToggle="show' + ($("section[data-vid]").length)  + '"]').on("click", function(e){
+                    
+                    $(this).siblings(".toggleVideo").toggle();
+                    $(this).toggleClass("activeToggleVideo");
+                    e.stopPropagation();
+                    e.preventDefault();
+                    
+
+                        
+                });
+                $(".close4").on("click", function(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $(this).parent().parent().detach();
+                    
+                });
+                $("button[data-toggle-bar-video=\"toggle4\"]").on("click", function(){
+                    let $val = $(this).siblings(".toggleVideo").val();
+                    $(this).parent().siblings("iframe").attr("src", $val);
+                    saveVideo($val);
+                    
+                });
+                }
+                
+                
+                } // TOGGLE VIDEO
+               
+                
+                
+                
+                toggleVi();
+                    
+                function saveVideo(data) {
+                    localStorage.vid = data;
+                    
+                }; // save video 
+
+                
+
+                
+
+                   $plus.on("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var $newAba = $('<section data-drag="move" class="ui-widget-content" data-vid="video' + ($("section[data-vid]").length + 1) + '"><div class="container-video"><i  class="fas fa-times' + " " + "close" + ($(".fa-times").length + 1)  + '"></i><iframe src="https://www.youtube.com/embed/7TaklJatpY8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="bar-video" data-toggleVideo="toggle"><i data-showToggle="show' + ($("section[data-vid]").length + 1) + '" class="fas fa-search"></i><input  class="input-light-per toggleVideo'+ " " + "eventToggleVideo" + ($("section[data-vid]").length + 1) +  '" type="text"><button data-toggle-bar-video="toggle' + ($("section[data-vid]").length + 1)  + '" type="button" role="button" class="toggleVideo btn-blue-per btn-hg-25px-per bd-radius-per-4">Trocar</button></div></div></section>');
+                    $container.append($newAba);
+                    JqueryUIp();
+                    toggleVi();
+                    
+                    if ($("section[data-vid]").length === 4) {
+                        $(this).hide();
+                        
+                    }
+
+                   }); // ADD CONTAINER WITH PLUS   
+
+                   
+
+                 
+                // events area END
+                
+            } // INIT
+            
+            
+            $(init);
+            
+        }()); // JS
+        
+        
+    </script>
+</body>
+</html>

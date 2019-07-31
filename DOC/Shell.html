@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shell</title>
+	<link rel="shortcut icon" href="/icon_title/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="loader.css">    
+    <link rel="stylesheet" href="responsible.css">
+    <link rel="stylesheet" href="ferramentas.css">
+    <link rel="stylesheet" href="header1.0.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="pace2/pace.js"></script>
+    <link href="pace2/themes/red/pace-theme-minimal.css" rel="stylesheet" />
+    
+    <style>
+    ::-webkit-scrollbar
+{
+    width: 7px;
+    height: 4px;
+    
+    
+}
+::-webkit-scrollbar-thumb
+{
+    background:  rgb(5, 236, 44);
+    border-radius: 6px;
+    
+}
+#nav-bar-pentest  a.current
+  {
+    color: rgb(5, 236, 44) !important;
+    border-bottom: none;
+  }
+  body.dark-per-theme .header1
+{
+    box-shadow: 1px 4px 17px 0px rgb(46, 202, 7);
+}
+.theme-current-per,
+.theme-current-per:hover,
+.theme-current-per:focus
+
+{
+    background: rgb(72, 207, 10) !important;
+}
+.header1 .dropdown-item:focus, .header1 .dropdown-item:hover 
+
+{
+  background: rgb(72, 207, 10) !important;
+    color: #fff;
+}
+.page-link:hover
+{
+  color:  rgb(5, 236, 44) !important;
+}
+body.dark-per-theme .page-item .page-link:hover {
+  color:  rgb(5, 236, 44) !important;
+}
+
+/* RANGE */
+
+input[type=range] {
+                            
+                            height: 35px;
+                            -webkit-appearance: none;
+                            background: transparent;
+                            padding-right: 13px;
+                            
+                          }
+                          input[type=range]:focus {
+                            outline: none;
+                          }
+                          input[type=range]::-webkit-slider-runnable-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            box-shadow: 0px 0px 0px #000000;
+                            background: #888;
+                            border-radius: 34px;
+                            border: 0px solid #000000;
+                          }
+                          input[type=range]::-webkit-slider-thumb {
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(5, 236, 44) !important;
+                            cursor: pointer;
+                            -webkit-appearance: none;
+                            margin-top: -11px;
+                            transition: 0.3s linear;
+                          }
+                          input[type=range]:focus::-webkit-slider-runnable-track {
+                            background: #CCCCCC;
+                          }
+                          input[type=range]::-moz-range-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            box-shadow: 0px 0px 0px #000000;
+                            background: #CCCCCC;
+                            border-radius: 34px;
+                            border: 0px solid #000000;
+                          }
+                          input[type=range]::-moz-range-thumb {
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(5, 236, 44) !important;
+                            cursor: pointer;
+                          }
+                          input[type=range]:focus::-webkit-slider-thumb,
+                          input[type=range]:hover::-webkit-slider-thumb
+                          
+                          {
+                            background: #000;
+                          }
+                          input[type=range]::-webkit-progress-value
+                          {
+                            background:  rgb(5, 236, 44) !important;;
+                          }
+                          input[type=range]:focus::-moz-range-thumb,
+                          input[type=range]:hover::-moz-range-thumb
+                          {
+                            background: #000;
+                          }
+                          input[type=range]::-moz-range-progress
+                          {
+                            background:  rgb(5, 236, 44) !important;;
+                            border-radius: 4px;
+                            height: 8px;
+                          }
+                          input[type=range]::-ms-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            background: transparent;
+                            border-color: transparent;
+                            color: transparent;
+                          }
+                          input[type=range]::-ms-fill-lower {
+                            background: #CCCCCC;
+                            border: 0px solid #000000;
+                            border-radius: 68px;
+                            box-shadow: 0px 0px 0px #000000;
+                          }
+                          input[type=range]::-ms-fill-upper {
+                            background: #CCCCCC;
+                            border: 0px solid #000000;
+                            border-radius: 68px;
+                            box-shadow: 0px 0px 0px #000000;
+                          }
+                          input[type=range]::-ms-thumb {
+                            margin-top: 1px;
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(5, 236, 44) !important;
+                            cursor: pointer;
+                          }
+                          input[type=range]:focus::-ms-fill-lower {
+                            background: #CCCCCC;
+                          }
+                          input[type=range]:focus::-ms-fill-upper {
+                            background: #CCCCCC;
+                          }
+
+                          .boxChangeOutput-per
+                          {
+                            position: relative;
+                            margin-right: 13px;
+                            background: #fff;
+                            border: 1px solid rgb(187, 184, 184);
+                            border-radius: 4px;
+                            padding: 10px;
+                            /* box-shadow: 0 0 5px rgb(0, 0, 0); */
+
+                          }
+                          .boxChangeOutput-per output
+                          {
+                            color:  rgb(5, 236, 44) !important;
+                            font-family: Arial, sans-serif;
+                            font-weight: bold;
+                          }
+
+                          .header2 .nav2 .container-per .container-titulo-per
+{
+    width: 100%;
+    height: 105px;
+    border-bottom: 2px solid rgb(5, 236, 44);
+    display: flex;
+    margin-bottom: 45px;
+
+}
+    
+    </style>
+</head>
+<body>
+        
+    
+      
+            
+          <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap"></md-backdrop>
+            
+            <header class=" masthead mb-auto header1">
+              <i class="fas fa-bars"></i>
+                <div class="inner">
+          <a id="go-index" href="index.html"><h3 class="masthead-brand">Lonely</h3></a>
+                  
+                  <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button data-theme="normal" class="dropdown-item" type="button"><b>Tema Normal</b></button>
+                          <button data-theme="dark" class="dropdown-item" type="button"><b>Tema Dark</b></button>
+                          <button data-theme="animado" class="dropdown-item" type="button"><b>Tema Animado</b></button>
+                        </div>
+                      </div>
+                  
+                  <nav class=" nav nav-masthead justify-content-center nav1">
+                    <a class="nav-link" href="Lonely.html">Home</a>
+                    <a class="nav-link active" href="#">Artigos/Documentação</a>
+                    <a class="nav-link" href="programas.html">Programas</a>
+                  </nav>
+                </div>
+              </header>
+            <header class="header2">
+                      <nav class="nav2">
+                          <div class="container-per">
+                                <div class="container-titulo-per">
+                                    <b class="titulo-per"><h3>Documentação</h3></b>
+                                </div>
+                              <a class="link-respo" href="Lonely.html"><i data-icons="icons-nav" class="fas fa-home"></i>Home</a>
+                              <a id="accordion" class="link-respo current" href="#"><i data-icons="icons-nav" class="fas fa-book"></i>Documentação <i id="accordion-angle" class="fas fa-caret-down"></i></a>
+                              <div class="nav-doc-per">
+                                <a data-navper="0" data-nav-doc="doc" href="Documentação.html">Dashboard</a>
+                                <a data-navper="1" data-nav-doc="doc"  href="Pentest.html">Pentest</a>
+                                <a data-navper="2" data-nav-doc="doc" style="color: #007bff" href="Shell.html">Shell-Unix</a>
+                  <a data-navper="3" data-nav-doc="doc" href="Shell-Windows.html">Shell-windows</a>
+                  <a data-navper="4" data-nav-doc="doc" href="#">Front-End</a>
+                  <a data-navper="5" data-nav-doc="doc" href="#">Back-End</a>
+                              </div>
+                              <a class="link-respo" href="programas.html"><i data-icons="icons-nav" class="fab fa-battle-net"></i>Programas</a>
+                             
+                             
+                                
+                          </div>
+                      </nav>
+                      <div class="center-per">
+                          <input type="checkbox" name="toggleTheme-hd2" id="toggleTheme-hd2">
+                            <b data-b="one" class="ft-color-light-per" style="margin-right:15px;">Light</b>
+                            <b data-b="two" class="ft-color-grey-per" style="margin-left:15px;">Dark</b>
+                          </div>
+            </header>
+            <div id="topPage"  class="container-fluid">
+                    <div class="row">
+                          <!-- navbar -->
+                      <nav id="navbar-2" class="col-md-2 d-none d-md-block bg-light sidebar">
+                        <div class="sidebar-sticky">
+                          <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a data-navper="0" class="nav-link" href="Documentação.html">
+                                <span data-feather="home"></span>
+                                Dashboard 
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="1" class="nav-link " href="Pentest.html">
+                                <span data-feather="file"></span>
+                                Pentest <span class="sr-only">(current)</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="2" class="nav-link active" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Shell Unix
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="3" class="nav-link" href="Shell-Windows.html">
+                                <span data-feather="users"></span>
+                                Shell Windows
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="4" class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Front-End
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="5" class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Back-End
+                              </a>
+                            </li>
+                          </ul>
+                  
+                          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Saved reports</span>
+                            <a class="d-flex align-items-center text-muted" href="#">
+                              <span data-feather="plus-circle"></span>
+                            </a>
+                          </h6>
+                          <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                              <a data-navper="6" class="nav-link" href="https://github.com/Luca13-cmyk/" target="_blank">
+                                <span data-feather="file-text"></span>
+                                GitHub
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="7" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                GitHub2
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="8" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Social engagement
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="9" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Year-end sale
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                          <h1 class="h2">Shell Unix</h1>
+                          <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group mr-2">
+                                <input type="range" name="range" id="changeValue" min="16" max="22" value="16">
+                                <div class="boxChangeOutput-per">
+                                  <output id="changeOutput">16px</output>
+
+                                </div>
+                               
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                              <span data-feather="calendar"></span>
+                              This week
+                            </button>
+                          </div>
+                        </div>
+                  
+                        <div id="ajax-content" class="bd-example">
+                          <div id="ajax">
+
+                          
+                                <h2>APT</h2>
+                                <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> O principal instalador de pacotes 
+                            <section class="codes-per">
+                                   # apt-get update  <span style="color: grey;padding-left: 10px">// Existe uma lista, que contém uma descrição de todos os pacotes disponíveis para o Debian, disponível dentro de cada repositório de pacotes. O apt-get consulta esta lista, para  saber o  que pode ser instalado. Este comando faz umacomparação entre a lista que você tem armazenada e a lista que está no servidor depacotes.   Se   a   sua   lista   for   mais   velha,   ele   faz  o  download  da   mais   recente.   Aatualização de um único pacote provoca o lançamento de um nova lista.</span>
+                            </section>
+                            <section class="codes-per">
+                                    # apt-get upgrade
+                                      <span style="color: grey;padding-left: 10px">// Esta é a opção responsável pela atualização de pacotes. Quandovocê executa este comando, uma lista de pacotes é copiada do repositório para amaquina local do usuário, onde é feita uma comparação entre as versões de softwareexistentes no repositório e na maquina local, caso existam versões mais recentes paraos programas que o usuário possuí em seu sistema, então, o APT automaticamenteatualizará estes programas no computador do usuário. Não é preciso dizer qual pacotevocê quer atualizar, independente de ser apenas um, ou serem vários, ele fará todaatualização necessária.</span>
+                            </section>
+                            <section class="codes-per">
+                                # apt-get clean  
+                                      <span style="color: grey;padding-left: 10px">// Após a instalação de um pacote, não precisamos necessariamente,manter o arquivo ”.deb” em nosso sistema (em “/var/cache/apt/archives”). O processode instalação não remove os pacotes baixados! Se você não remover os pacotesbaixados, começará a acumulá-los no disco rígido. Com o passar do tempo isso podecausar um problema de falta de espaço. O “apt-get clean” faz a remoção de todos ospacotes no diretório de cache do APT.</span>
+                            </section>
+                            <section class="codes-per">
+                                    # apt-get install PACOTE <span style="color: grey;padding-left: 10px">// Executamos este comando para realizar a instalação depacotes no sistema. Se quisermos instalar mais de um programa, basta escrever todosos nomes, separados por espaço na linha de execução do comando. Se um pacoteprecisa de outros para ser instalado, isto é, se ele tem pré-requisitos, eles tambémserão   selecionados   para   instalação   automaticamente.   Quando   você   requisita   ainstalação   de   um   pacote   que   não   tem   dependências,   o  download  começaimediatamente. Caso existam dependências, elas são mostradas a você e o programaaguarda a sua confirmação (“Y/n”) para continuar. Existem vários motivos para eleesperar por uma confirmação: a lista de dependências pode ser muito grande e vocêpode não querer instalar todos os pacotes, pode não haver espaço em disco suficientepara instalar o programa e/ou suas dependências, o pacote ser incompatível com outrojá instalado e exigir que este seja removido, ou ainda, o repositório não é uma fonteconfiável para o Debian, que acontece quando não existe na máquina a chave públicado repositório de onde vem a atualização. Existe ainda, um caso em que há mais deuma versão disponível para o mesmo pacote, se um pacote chamado “nome” possuíuma versão “1.0-0”  e “2.0-0”, por exemplo, a versão mais nova será instalada porpadrão, entretanto, podemos querer instalar a versão mais antiga (1.0-0), tendo queexecutar o comando da seguinte forma: apt-get install nome=1.0-0</span>
+
+                            </section>
+                            <section class="codes-per">
+                                    # apt-get dist-upgrade <span style="color: grey;padding-left: 10px">// Possibilita a atualização completa da distribuição utilizada pelousuário. É importante que usuário tenha em mente, que a execução deste comandonum   sistema   que   utilize   meta-pacotes   customizados,   como   é   o   caso   do   “DebianDesktop Paraná” usado na Celepar, ou versões de software instaladas manualmente(através   de   compilação   do   código   fonte,   por   exemplo),   poderão   gerar   problemasgraves, impossibilitando inclusive o uso posterior do sistema. Para a devida utilizaçãodeste   comando,   é   necessário   a   edição   do   arquivo   de   configuração   do   APT,   o“/etc/apt/sources.list”,   configurando   o   mesmo   para   utilizar   os   repositórios   da   novadistribuição que será instalada no sistema.</span>
+
+                            </section>
+                            <section class="codes-per">
+                                    # apt-get remove PACOTE <span style="color: grey;padding-left: 10px">// Remove   um   ou   mais   pacotes.   Esta   operação   faz  adesinstalação de um pacote do sistema e não a remoção do “.deb” do diretório decache do APT. Em alguns casos, os arquivos de configuração e/ou dados do pacotesão mantidos. Isso pode ser bom ou ruim. Se você removeu um pacote por acidente,todo o seu trabalho de configuração dele ainda estará preservado. Preste atenção àsmensagens   mostradas   durante   a   remoção   de   um   pacote   para   saber  o  que   estáacontecendo.   Observe   também   que   se   algum   pacote   depende   do   pacote   a   serremovido, esse pacote também será removido.</span>
+
+                            </section>
+                            <section class="codes-per">
+                                   # apt-get --purge remove PACOTE <span style="color: grey;padding-left: 10px">//Remove um ou mais pacotes e seus respectivosarquivos de configuração.</span>
+                            </section>
+                            <section class="codes-per">
+                                # apt-get source PACOTE <span style="color: grey;padding-left: 10px">// Possibilita que o código fonte de um programa seja copiadopara maquina local em vez do binário do programa e seus scripts de configuração, quecompõem o pacote do programa propriamente dito. Para baixar arquivos contendo ofonte de programas  para sua maquina, é necessário configurar adequadamente oarquivo   “/etc/apt/sources.list”,   para   isso   veja   o   tópico   “Reconfigurando   a   lista   depacotes”, na seqüência.</span>
+                            </section>
+                             <section class="codes-per">
+                                 # apt-get build-dep PACOTE  <span style="color: grey;padding-left: 10px">// Este comando, tenta satisfazer as dependências, que umdeterminado   pacote   contendo   código   fonte   de   um   programa   possuí,   para   sercompilado.   Por  exemplo,   suponha  que   você   deseja   recompilar   o   código   fonte  do“tuxracer” (um joguinho), se você executar o comando “apt-get build-dep tuxracer”, oAPT tentará instalar todos os pacotes que sejam necessários para compilação dopacote “tuxracer”. Em algumas situações, é necessário instalar pacotes além daquelesque são trazidos automaticamente pelo comando “apt-get build-dep”. Isto é algo naturale você deverá se acostumar a estas situações.</span>
+                            </section>
+                            <section class="codes-per">
+                                   # apt-get check <span style="color: grey;padding-left: 10px">É uma ferramenta de diagnostico. Ele atualiza o cache de pacotes everifica se há alguma dependência quebrada que necessita ser resolvida (utilizando-se“apt-get -f install”) no sistema.</span>
+                            </section>
+                            <section class="codes-per">
+                                   # apt-get install --reinstall PACOTE <span style="color: grey;padding-left: 10px">Em algumas situações, precisaremos reinstalarum pacote já presente no sistema. Este é o comando que permite fazer isso. Tome ocuidado de fazer uma cópia dos seus arquivos de configuração para não ter surpresasdesagradáveis. </span>
+                            </section>
+                            <section class="codes-per">
+                                   # apt-cache search NOME <span style="color: grey;padding-left: 10px">// Para procurar por um pacote qualquer, executamos estecomando. Ele faz uma pesquisa na lista de pacotes disponíveis, procurando pacotesque possuam a expressão fornecida no argumento “NOME”. A saída deste comando,apresenta todos os pacotes que apresentam a palavra fornecida como argumento emparte do nome ou na descrição do pacote. Existem formas mais complexas de buscaque podem ser mais claras ou mais específicas, mas geralmente, a utilização docomando “grep” para filtrar a saída já é suficiente para grande maioria dos casos.</span>
+                            </section>
+                            <section class="codes-per">
+                                   # apt-cache show PACOTE <span style="color: grey;padding-left: 10px">//Uma vez descoberto o nome correto do pacote Debian,você pode visualizar todas as informações sobre o pacote, bem como seu mantenedor,sua versão, sua descrição, dentre outras informações relevantes.</span>
+
+                            </section>
+                            <section class="codes-per">
+                                    # apt-cache showsrc PACOTE <span style="color: grey;padding-left: 10px">// em a mesma função que “apt-cache show”, porém,atua mostrando informações sobre pacotes fontes.</span>
+
+                            </section>
+                            <section class="codes-per">
+                                # apt search firefox | grep -A 3 firefox <span style="color: grey;padding-left: 10px">// </span>
+
+                        </section>
+                            <section class="codes-per">
+                                     # synaptic   <span style="color: grey;padding-left: 10px">// É uma  interface   gráfica para a instalação de pacotes. Ela também éutilizada em outras distribuições, o Ubuntu é uma delas.</span>
+                            </section>
+                            <section class="codes-per">
+                                #  apt-get -t testing install [pacote]
+                            </section>
+                            <section class="codes-per">
+                                # nano /etc/apt/preferences <span style="color: grey;padding-left: 10px">//  controla a prioridade de versão de pacotes</span>
+                            </section>
+                            <section class="codes-per">
+                                # nano /etc/apt/sources.list <span style="color: grey;padding-left: 10px">// Repositório</span>
+                            </section>
+
+                            <hr />
+                            <h2>TAR</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> extrair um pacote 
+                            
+                            <section class="codes-per">
+                                # tar -xvzf nome_do_arquivo.tar.gz <span style="color: grey;padding-left: 10px">// Extrai</span>
+                            </section>
+                            <section class="codes-per">
+                                # tar -xvjf nome_do_arquivo.tar.bz2 <span style="color: grey;padding-left: 10px">// Extrai</span>
+                            </section>
+                            <section class="codes-per">
+                                # tar -xf nome_do_arquivo.tar <span style="color: grey;padding-left: 10px">// Extrai</span>
+                            </section>
+                            <section class="codes-per">
+                                            # tar cf pacote.tar arqs <span style="color: grey;padding-left: 10px"> // Cria pacote TAR com nome pacote.tar</span>
+                              </section>
+                            <section class="codes-per">
+                                # tar czf pacote.tar.gz arqs <span style="color: grey;padding-left: 10px">// Cria um pacote tar (nomeado pacote.tar) com compressão GZip</span>
+                            </section> 
+                            <section class="codes-per">
+                                    # tar cjf pacote.tar.bz2 <span style="color: grey;padding-left: 10px">// Cria um pacote tar (nomeado pacote.tar) com compressão BZip2</span>
+                            </section>    
+                            <hr />
+                            <h2>RAR</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> extrair ou compactar um pacote rar 
+                            
+                            <section class="codes-per">
+                                # rar a file1.rar test_file <span style="color: grey;padding-left: 10px">// Cria um arquivo com o rar chamado ‘file1.rar’.</span>
+                            </section>
+                            <section class="codes-per">
+                                # rar x file1.rar <span style="color: grey;padding-left: 10px">// Descompacta o arquivo rar.</span>
+                            </section>
+                            <section class="codes-per">
+                                # unrar x file1.rar <span style="color: grey;padding-left: 10px">// Descompacta o arquivo rar</span>
+                            </section>
+                               
+                            <hr />
+                            <h2>GZIP</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> extrair ou compactar um pacote gzip 
+                            
+                            <section class="codes-per">
+                                # gzip file1 <span style="color: grey;padding-left: 10px">// Compacta o arquivo’.</span>
+                            </section>
+                            <section class="codes-per">
+                                # gunzip file1.gz <span style="color: grey;padding-left: 10px">// Descompacta o arquivo</span>
+                            </section>
+                            <section class="codes-per">
+                                # gzip -9 file1 <span style="color: grey;padding-left: 10px">// Comprime com compressão máxima.</span>
+                            </section>
+                               
+                            <hr />
+                            <h2>ZIP</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> extrair ou compactar um pacote zip 
+                            
+                            <section class="codes-per">
+                                # zip file1.zip file1 <span style="color: grey;padding-left: 10px">// Cria um arquivo compactado zip</span>
+                            </section>
+                            <section class="codes-per">
+                                # zip -r file1.zip file1 file2 dir1 <span style="color: grey;padding-left: 10px">// Compressão .zip de vários arquivos e diretórios simultaneamente.</span>
+                            </section>
+                            <section class="codes-per">
+                                # unzip file1.zip <span style="color: grey;padding-left: 10px">// Descompacta um arquivo zip.</span>
+                            </section>
+                            <section class="codes-per">
+                              # bunzip2 file1.bz2 <span style="color: grey;padding-left: 10px">// Descompacta um arquivo bunzip.</span>
+                              <hr>
+                              # bzip2 file1 <span style="color: grey;padding-left: 10px">// compacta um arquivo no formato bz2.</span>
+                            </section>
+                               
+                            <hr />
+                            <h2>Compilação</h2>
+
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> Compilando Programas a Partir do Código Fonte 
+                            
+
+                            <section class="codes-per">
+                                    # apt install make autoconf gcc g++ libc6-dev   <span style="color: grey;padding-left: 10px">//alguns pacotes GNU são necessários paracompilar um programa de código livre. Os mais comuns na distribuição Debian são esses</span>
+                            </section>
+                            <section class="codes-per">
+                                    <b>O arquivo “configure”</b>  <span style="color: grey;padding-left: 10px">// Este arquivo é um scriptshell que examina o sistemapara verificar se diversas dependências necessárias para compilar o projetoserão satisfeitas. Ele deve ser executado digitando-se “./configure”  dentro dodiretório que contém o código-fonte do programa a ser compilado. Esse script,também pode conter parâmetros que podem ser passados na linha de execuçãopara configuração de opções especificas, para consultar a lista de parâmetrosdisponíveis, tente executar o script “./configure --help”. Se o script “configure” nãoencontrar  alguma das dependências necessárias para compilação do programa,um erro é gerado e a execução é finalizada automaticamente, gerando umamensagem semelhante à abaixo:checking for SDL - version >= 1.2.0... noconfigure: error: *** SDL version 1.2.0 not found!Nesse caso, nos falta a biblioteca de desenvolvimento (cabeçalhos) “SDL” versão1.2.0 ou mais recente. Caso quiséssemos resolver este problema, precisaríamos instalaro   pacote   “libsdl1.2-dev”para   resolver   essa   dependência.   A   maioria   das   bibliotecasnecessárias para a compilação de programas no GNU/Debian têm o prefixo “lib”  e osufixo “-dev”, como por exemplo, “libc6-dev”, “libsdl1.2-dev”, etc.</span>
+                            </section>
+                            <section class="codes-per">
+                                   <b>make </b>   <span style="color: grey;padding-left: 10px">// O comando “make” utiliza as configurações que foram criadas pelo script“configure” para compilar múltiplos arquivos de código fonte de um projeto. Utilizatambém um arquivo de descrição (chamado “makefile” ou “Makefile”) que estápresente no diretório onde o código fonte foi extraído. Seu conteúdo é compostode regras que definem as dependências entre arquivos fonte e os comandosnecessários para a compilação. A partir deste arquivo, ele executa seqüênciasde comandos que são interpretados pelo  shell  para realizar a compilação demaneira correta.</span>
+                            </section>
+                            <section class="codes-per">
+                                    <b>make install</b>  <span style="color: grey;padding-left: 10px">// É o comando utilizado para compilar e em seguida executar oinstalador   do  programa   que   acabamos   de   compilar.   Alguns   programas   nãopossuem essa facilidade, nestes casos, o administrador terá também o trabalhomanual de instalar o programa compilado corretamente, em geral, realizandoatividades como copiar arquivos executáveis para diretórios como “/usr”, e osarquivos de configuração para “/etc”, etc.PÁG.: 23
+                                        </span>
+                            </section>
+                            <hr />
+                            <h2>Gerenciando Discos e Partições</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> fdisk/cfdisk
+                            <section class="codes-per">
+                                    # fdisk -l  <span style="color: grey;padding-left: 10px">// obter informações relacionadas aos discos rígidos </span>
+                            </section>
+                            <section class="codes-per">
+                                    # cfdisk /dev/sda1  <span style="color: grey;padding-left: 10px">// obter informações relacionadas aos discos rígidos </span>
+                                    
+                            </section>
+                            <section class="codes-per">
+                                # mkfs.xfs /dev/hda1 <span style="color: grey;padding-left: 10px">// criamos um sistema de arquivos do tipo “xfs” na partição “/dev/hda1”.</span>
+                            </section>
+                            <hr />
+                            <h2>Rede</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> ifconfig
+                            <section class="codes-per">
+                                    # ifconfig eth0 down <span style="color: grey;padding-left: 10px">// Desabilita a interface</span>
+                            </section>
+                            <section class="codes-per">
+                                    # ifconfig eth0 up <span style="color: grey;padding-left: 10px">// Habilita a interface</span>
+                            </section>
+                            <section class="codes-per">
+                                    # ifconfig eth0 192.168.0.105 <span style="color: grey;padding-left: 10px">// Modifica o ip da interface</span>
+                            </section>
+                            <section class="codes-per">
+                                    # ifconfig eth0 netmask 255.255.255.0  <span style="color: grey;padding-left: 10px">// Modifica a mascara de rede (netmask) da interface
+                                            </span>
+                            </section>
+                            <section class="codes-per">
+                                    # ifconfig eth0 broadcast 192.168.0.255 <span style="color: grey;padding-left: 10px">//  Modifica o broadcast da interface</span>
+                            </section>
+                            <section class="codes-per">
+                                    # route add default gw 192.168.0.1 dev eth0 <span style="color: grey;padding-left: 10px">// adiciona gateway padrão de rede na interface
+                                            </span>
+                            </section>
+                            <section class="codes-per">
+                                    # nano /etc/resolv.conf || echo "nameserver 8.8.8.8" >> /etc/resolv.conf  <span style="color: grey;padding-left: 10px">// Configura o dns da máquina
+                                            </span>
+                            </section>
+                            <section class="codes-per">
+                                    # tcpdump tcp port 443  <span style="color: grey;padding-left: 10px">// Exibe todo o tráfego HTTPS.</span>
+                            </section>
+                            <section class="codes-per">
+                                # tcpdmatch sshd 192.168.1.4  <span style="color: grey;padding-left: 10px">//(teste de segurança) Testa se a tentativa de conexão ao daemon SSH “sshd” vinda do endereço colocado foi bem sucedida ou não.</span>
+                        </section>
+                            <section class="codes-per">
+                              # iwlist scan  <span style="color: grey;padding-left: 10px">// Exibe as redes sem fio</span>
+                            </section>
+                            <section class="codes-per">
+                              # iwconfig eth1  <span style="color: grey;padding-left: 10px">// Exibe a configuração de uma placa de rede sem fio</span>
+                            </section>
+                            <section class="codes-per">
+                              # ifup eth0  <span style="color: grey;padding-left: 10px">// Ativa uma interface ‘eth0’.</span>
+                            </section>
+                            <section class="codes-per">
+                              # ifdown eth0  <span style="color: grey;padding-left: 10px">// Desabilita uma interface ‘eth0’.</span>
+                            </section>
+
+                            <hr />
+                            <h2>Firewall</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> iptables/ufw
+                            <section class="codes-per">
+                              # ufw enable  <span style="color: grey;padding-left: 10px">   // habilita o ufw firewall </span>
+                            </section>
+                            <section class="codes-per">
+                              # ufw disable <span style="color: grey;padding-left: 10px">// desabilita o ufw firewall</span>
+                            </section>
+                            <section class="codes-per">
+                             # iptables -L --line-number <span style="color: grey;padding-left: 10px">// Lista regras do firewall (Númerado)</span>
+                            </section>
+                            <section class="codes-per">
+                             # iptables -A INPUT -j DROP <span style="color: grey;padding-left: 10px">// Tranca o computador na cadeia de entrada</span>
+                            </section>
+                            <section class="codes-per">
+                             # iptables -A OUTPUT -j DROP <span style="color: grey;padding-left: 10px">// Tranca o computador na cadeia de saída</span>
+                            </section>
+                            <section class="codes-per">
+                             # iptables -A FORWARD -j DROP <span style="color: grey;padding-left: 10px">// Tranca o computador na cadeia de encaminhamento</span>
+                            </section>
+                            <section class="codes-per">
+                             # iptables -I INPUT 1 -j DROP <span style="color: grey;padding-left: 10px">// Tranca a cadeia input com prioridade 1</span>
+                            </section>
+                            <section class="codes-per">
+                              # iptables -I OUTPUT 1 -j DROP <span style="color: grey;padding-left: 10px">// Tranca a cadeia output com prioridade 1</span>
+                            </section>
+                            <section class="codes-per">
+                              # iptables -I FORWARD 1 -j DROP <span style="color: grey;padding-left: 10px">// Tranca a cadeia forward com prioridade 1</span>
+
+                            </section>
+                            <section class="codes-per">
+                              # iptables -D INPUT 1  <span style="color: grey;padding-left: 10px">// Deleta a primeira regra da cadeira de entrada</span>
+
+                            </section>
+                            <section class="codes-per">
+                              # iptables -D OUTPUT 1  <span style="color: grey;padding-left: 10px">// Deleta a primeira regra da cadeira de saída</span>
+
+                            </section>
+                            <section class="codes-per">
+                              # iptables -D FORWARD 1  <span style="color: grey;padding-left: 10px">// Deleta a primeira regra da cadeira de encaminhamento</span>
+
+                            </section>
+                            <section class="codes-per">
+                              # iptables -I (INPUT/OUTPUT/FORWARD) (prioridade)  -p (tcp/udp) -m multiport  (--sport/dport/port) 4444,110,25,80,443 -j (DROP/ACCEPT)  <span style="color: grey;padding-left: 10px">// bloqueio ou abertura de várias portas na cadeia escolhida</span>
+
+                            </section>
+                            <section class="codes-per"></section>
+                            <section class="codes-per"></section>
+                            <section class="codes-per"></section>
+                            <section class="codes-per"></section>
+                            <section class="codes-per"></section>
+                            <hr />
+                            <h2>Sistema</h2>
+                            <span style="color: rgb(25, 224, 7);">GNU/Debian:</span> 
+
+                            <section class="codes-per">
+                              
+                              # service (serviço) (start/stop/status)   <span style="color: grey;padding-left: 10px">// Inicia/para/status de um serviço</span>
+                            </section>
+                            <section class="codes-per">
+                              # cat /proc/cpuinfo <span style="color: grey;padding-left: 10px">// Informações da CPU (processador)</span> 
+                              
+                            </section>
+                            <section class="codes-per">
+                                # cat /proc/meminfo   <span style="color: grey;padding-left: 10px"> // Informações da RAM </span>       
+                            </section>
+                            <section class="codes-per">
+                               # uname -a  <span style="color: grey;padding-left: 10px"> // Exibe informações do kernel</span>
+                            </section>
+                            <section class="codes-per">
+                                # finger <span style="color: grey;padding-left: 10px"> // Exibe informações do usuário</span>
+                            </section>
+                            <section class="codes-per">
+                                # free -h  <span style="color: grey;padding-left: 10px"> // Uso de ram e swap </span>
+                                
+                            </section>
+                            <section class="codes-per">
+                                # df <span style="color: grey;padding-left: 10px"> // Exibe o uso do disco</span>
+
+                            </section>
+                            <section class="codes-per">
+                              # du <span style="color: grey;padding-left: 10px"> // Exibe o uso do espaço em um diretório</span>
+
+                          </section>
+                          
+                          <section class="codes-per">
+                            # uname -m <span style="color: grey;padding-left: 10px"> // Exibe a arquitetura da máquina</span>
+
+                          </section>
+                          <section class="codes-per">
+                          # uname -r <span style="color: grey;padding-left: 10px"> // Exibe versão do kernel usada</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # cat /proc/mounts | grep /dev/sda3 <span style="color: grey;padding-left: 10px"> // Exibe o sistema de arquivos montado.</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # dmidecode -q <span style="color: grey;padding-left: 10px"> // Exibe os componentes do sistema</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # lspci -tv <span style="color: grey;padding-left: 10px"> // Exibe os dispositivos PCI</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # dmesg <span style="color: grey;padding-left: 10px"> // As mensagens que aparecem durante o processo de
+                              inicialização, podem ser conferidas posteriormente pelo usuário</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # lsof -p 2042 <span style="color: grey;padding-left: 10px"> // Lista todos os recursos (arquivos, diretórios, pipes, etc) utilizados pelo processo
+                              com PID “2042”</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # nice -n -19 find <span style="color: grey;padding-left: 10px"> // Configura a prioridade de execução do comando “find” para -19 (muito alta).   (-20 mais alta, 20 mais baixa, 10 padrão)</span>
+
+                          </section>
+                          <section class="codes-per">
+                            # renice 0 1335 <span style="color: grey;padding-left: 10px"> // Altera a prioridade do processo com PID 1335 para 0 (zero).</span>
+
+                          </section>
+                          <section class="codes-per">
+                              # watch -n 5 “cat teste.txt” <span style="color: grey;padding-left: 10px"> // Executa o comando “cat teste.txt” a cada 5 segundos e exibe a saída na tela.</span>
+  
+                            </section>
+                            <section class="codes-per">
+                                # which -a ls <span style="color: grey;padding-left: 10px"> // imprime na tela, todos os caminhos encontrados para o executável “ls”.</span>
+    
+                              </section>
+                              <section class="codes-per">
+                                  # ps aux <span style="color: grey;padding-left: 10px"> // mostra processos em execução</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # jobs <span style="color: grey;padding-left: 10px"> // mostra processos em segundo plano</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # find /etc -name hosts <span style="color: grey;padding-left: 10px"> // procura por arquivos ou diretorios com nome hosts</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # find /etc -name "hosts*" <span style="color: grey;padding-left: 10px"> // // uso do coringa para pesquisar os arquivos e extrair linhas que corresponde a expressão regular</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # dd if=kali.iso of=/dev/sdb  <span style="color: grey;padding-left: 10px"> // copia a imagem iso para o pen drive</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # dmesg  <span style="color: grey;padding-left: 10px"> // log do sistema</span>
+      
+                              </section>
+                              <hr>
+                              <i>Execução de programas em segundo plano:</i>
+                              <br>
+                              <section class="codes-per">
+                                  # (prgrama&)  <span style="color: grey;padding-left: 10px"> // executa um programa em segundo plano, ex: firefox&</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # firefox > /dev/null &  <span style="color: grey;padding-left: 10px"> // inicia um programa em segundo plano e envia todos os logs para o "buraco negro" do linux.</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # fg %1 fgbg %1  <span style="color: grey;padding-left: 10px"> // Inicia o processo top antes pausado com CTRL + Z para  segundo plano</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # bg %[Número de indice]  <span style="color: grey;padding-left: 10px"> // Retorna o aplicativo para segundo plano e executa[caso esteja em modo parado]</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # fg %[Número de indice]  <span style="color: grey;padding-left: 10px"> // Retorna o aplicativo para primeiro plano</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # kill %1  <span style="color: grey;padding-left: 10px"> // mata o processo 1</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # ping -q google.com.br &  <span style="color: grey;padding-left: 10px"> // executa o ping em segundo plano</span>
+      
+                              </section>
+                              <hr>
+                              <section class="codes-per">
+                                  # df -h  /dev/sda1  <span style="color: grey;padding-left: 10px"> // o "-h" torna a leitura mais legivel </span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # journalctl -r  <span style="color: grey;padding-left: 10px"> // mostra todos os logs disponiveis</span>
+      
+                              </section>
+                               <section class="codes-per">
+                                  # journalctl -u ssh.service  <span style="color: grey;padding-left: 10px"> // filtra para o serviço especificado</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # lsusb  <span style="color: grey;padding-left: 10px"> // lista dispositivos usb</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # lshw  <span style="color: grey;padding-left: 10px"> // mostra todas as informações do hardware</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # file tmps.txt  <span style="color: grey;padding-left: 10px"> // inspecionar arquivos e dispositivos</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # dmesg | grep CPU0  <span style="color: grey;padding-left: 10px"> // informação do processador</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # lspci | grep Ethernet  <span style="color: grey;padding-left: 10px"> // informação do adaptador Ethernet</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl start ssh  <span style="color: grey;padding-left: 10px"> // inicia um serviço</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl enable wicd.service  <span style="color: grey;padding-left: 10px"> // inicia um serviço no momento da inicialização</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl disable wicd.service  <span style="color: grey;padding-left: 10px"> // desabilita um serviço no momento da inicialização</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl reload ssh  <span style="color: grey;padding-left: 10px"> // reinicia um aplicativo, aplicando as alterações</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl status  <span style="color: grey;padding-left: 10px"> // mostra serviços ativos no momento</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                  # systemctl list-units  <span style="color: grey;padding-left: 10px"> // lista unidades ativas</span>
+      
+                              </section>
+                              <section class="codes-per">
+                                   # lsblk  <span style="color: grey;padding-left: 10px"> // mostra partições dos discos</span>
+      
+                              </section>
+                              <!-- <section class="codes-per">
+                                  # lsblk  <span style="color: grey;padding-left: 10px"> // mostra partições dos discos</span>
+     
+                             </section> -->
+
+                          </div>
+                          
+                        </div>
+                        <hr />
+                            <nav id="nav-bar-pentest" aria-label="Page navigation example">
+                              <ul class="pagination pagination-lg">
+                                <!-- <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li> -->
+                                <li class="page-item"><a data-ajax="toggle" class="page-link current" href="Shell.html">1</a></li>
+                                <li class="page-item"><a data-ajax="toggle" class="page-link" href="Shell-2.html">2</a></li>
+                                <li class="page-item"><a data-ajax="toggle" class="page-link" href="Pentest-3.html">3</a></li>
+                                <!-- <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li> -->
+                              </ul>
+                            </nav>
+                  
+                        
+                        
+                      </main>
+                    </div>
+                  </div>
+                
+            <div class="content-scrollTop-per">
+                <a id="scrollTopLink" href="#topPage"> <i  class="fas fa-angle-double-up"></i></a>
+            </div>
+    
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js.js"></script>
+        <script src="utilies.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+        
+</body>
+</html>

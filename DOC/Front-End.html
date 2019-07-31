@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Front-End</title>
+	<link rel="shortcut icon" href="/icon_title/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="loader.css">    
+    <link rel="stylesheet" href="responsible.css">
+    <link rel="stylesheet" href="ferramentas.css">
+    <link rel="stylesheet" href="header1.0.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="c12.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="pace2/pace.js"></script>
+    <link href="pace2/themes/red/pace-theme-minimal.css" rel="stylesheet" />
+    
+    <style>
+      /* body
+      {
+        height: 800vh !important;
+      } */
+      body.dark-per-theme
+      {
+        background: #222 !important;
+      }
+    body.dark-per-theme .header1
+{
+  animation-name: led;
+  animation-duration: 15s;
+  animation-iteration-count: infinite; 
+}
+    @keyframes led{
+      9%
+      {
+        box-shadow: 1px 4px 17px 0px rgb(77, 219, 11);
+      }
+      24%
+      {
+        box-shadow: 1px 4px 17px 0px rgb(48, 79, 255);
+      }
+      56%
+      {
+        box-shadow: 1px 4px 17px 0px red;
+
+      }
+      66%
+      {
+        box-shadow: 1px 4px 17px 0px rgb(246, 30, 253);
+
+      }
+
+    }
+
+    ::-webkit-scrollbar-thumb
+{
+    background:  rgb(243, 9, 9);
+    
+    
+}
+.container-fluid
+{
+  max-width: 1400px !important;
+}
+.carousel:hover
+{
+  box-shadow: none;
+}
+.carousel:hover img[data-filter="effect-per"]
+{
+  
+  -webkit-filter: blur(15px); /* Safari */
+  filter: blur(15px);
+  transition: 0.05s ease;
+  
+
+}
+.carousel, .card
+{
+  box-shadow: 0 0 38px rgb(107, 107, 107);
+}
+.card
+{
+  margin-top:13px;
+  margin-bottom:13px;
+}
+body.dark-per-theme .carousel
+{
+  box-shadow: 0 0 38px #000;
+}
+.row-per
+{
+  justify-content:space-around;
+
+}
+body.dark-per-theme .card
+{
+  background: #000 !important;
+  box-shadow: 0 0 38px #000 !important;
+  /* margin-top:13px;
+  margin-bottom:13px; */
+
+}
+    
+    </style>
+</head>
+<body>
+    <script>
+        // LOADER 
+        
+        // function GetBrowserInfo() {
+        //     var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+            
+        //     var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+        //     var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+            
+        //     var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+        //     var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+        //     if (isOpera) {
+        //         return 1;
+        //     }
+        //     else if (isFirefox) {
+        //         return 2;
+        //     }
+        //     else if (isChrome) {
+        //         return 3;
+        //     }
+        //     else if (isSafari) {
+        //         return 4;
+        //     }
+        //     else if (isIE) {
+        //         return 5;
+        //     }
+        //     else {
+        //         return 0;
+        //     }
+        // } 
+        
+        // if (GetBrowserInfo() === 3 || GetBrowserInfo() === 4 || GetBrowserInfo() === 1) {
+        //     var body = document.getElementsByTagName("body")[0];
+        //     body.innerHTML += "<div id=\"pageloader-overlay\" class=\"visible incoming\"><div class=\"loader-wrapper-outer\"><div class=\"loader-wrapper-inner\"><div class=\"loader\"></div></div></div></div>"
+            
+        // }
+        
+        
+    </script>
+    <!-- <div id="login">
+        <input class="input-light-per" type="password" name="password" id="password">
+        <button id="enviarPass" role="button" type="button" class="btn-dark-per bd-radius-per-4">Entrar</button>
+  </div> -->
+  <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap"></md-backdrop>
+    
+    <header class=" masthead mb-auto header1">
+      <i class="fas fa-bars"></i>
+        <div class="inner">
+          <a id="go-index" href="index.html"><h3 class="masthead-brand">Lonely</h3></a>          
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button data-theme="normal" class="dropdown-item" type="button"><b>Tema Normal</b></button>
+                <button data-theme="dark" class="dropdown-item" type="button"><b>Tema Dark</b></button>
+                <button data-theme="animado" class="dropdown-item" type="button"><b>Tema Animado</b></button>
+              </div>
+            </div>
+          <nav class=" nav nav-masthead justify-content-center nav1">
+            <a class="nav-link" href="Lonely.html">Home</a>
+            <a class="nav-link active" href="#">Artigos/Documentação</a>
+            <a class="nav-link" href="programas.html">Programas</a>
+          </nav>
+        </div>
+      </header>
+      <header class="header2">
+        <nav class="nav2">
+            <div class="container-per">
+                  <div class="container-titulo-per">
+                      <b class="titulo-per"><h3>Documentação</h3></b>
+                  </div>
+                <a class="link-respo" href="Lonely.html"><i data-icons="icons-nav" class="fas fa-home"></i>Home</a>
+                <a id="accordion" class="link-respo current" href="#"><i data-icons="icons-nav" class="fas fa-book"></i>Documentação <i id="accordion-angle" class="fas fa-caret-down"></i></a>
+                <div class="nav-doc-per">
+                  <a data-navper="0" data-nav-doc="doc" style="color: #007bff" href="Documentação.html">Dashboard</a>
+                  <a data-navper="1" data-nav-doc="doc"  href="Pentest.html">Pentest</a>
+                  <a data-navper="2" data-nav-doc="doc" href="Shell.html">Shell-Unix</a>
+                  <a data-navper="3" data-nav-doc="doc" href="Shell-Windows.html">Shell-windows</a>
+                  <a data-navper="4" data-nav-doc="doc" href="#">Front-End</a>
+                  <a data-navper="5" data-nav-doc="doc" href="#">Back-End</a>
+                </div>
+                <a class="link-respo" href="programas.html"><i data-icons="icons-nav" class="fab fa-battle-net"></i>Programas</a>
+               
+               
+                  
+            </div>
+        </nav>
+        <div class="center-per">
+            <input type="checkbox" name="toggleTheme-hd2" id="toggleTheme-hd2">
+              <b data-b="one" class="ft-color-light-per" style="margin-right:15px;">Light</b>
+              <b data-b="two" class="ft-color-grey-per" style="margin-left:15px;">Dark</b>
+            </div>
+  </header>
+    <div  class="container-fluid">
+      <div class="row">
+            <!-- navbar -->
+        <nav id="navbar-2" class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a data-navper="0" class="nav-link" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="1" class="nav-link" href="Pentest.html">
+                  <span data-feather="file"></span>
+                  Pentest
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="2" class="nav-link" href="Shell.html">
+                  <span data-feather="shopping-cart"></span>
+                  Shell-UNIX
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="3" class="nav-link" href="Shell-Windows.html">
+                  <span data-feather="users"></span>
+                  Shell-Windows
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="4" class="nav-link active" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Front-End
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="5" class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Back-End
+                </a>
+              </li>
+            </ul>
+    
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Saved Reports</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a data-navper="6" class="nav-link" href="https://github.com/Luca13-cmyk/" target="_blank">
+                  <span data-feather="file-text"></span>
+                  GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="7" class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  GitHub2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="8" class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Social engagement
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-navper="9" class="nav-link" href="#">
+                  <span data-feather="file-text"></span>
+                  Year-end sale
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main  role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div id="topPage" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Front-End</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                    <div id="buttons"></div>
+              
+            </div>
+          </div>
+          
+          <section class="row row-per">
+            
+    <div id="gallery">
+            <div class="card" data-tags="Pequeno, Pesado" style="width: 18rem;">
+                    <img src="img/agoge.png"  alt="Rabbit" />
+                    <div class="card-body">
+                      <h5 class="card-title">Agogê</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a  href="https://github.com/Luca13-cmyk/Agoge-Theme" target="_blank" class="btn btn-primary">Github</a>
+                      <a href="themes/Agogê/index.html" class="btn btn-primary" target="_blank">Demo</a>
+                    </div>
+                  </div>
+                  <div class="card" data-tags="Pequeno, Leve" style="width: 18rem;">
+                        <img src="img/p2.jpg"  alt="Sea" />
+                        <div class="card-body">
+                          <h5 class="card-title">Agogê</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a  href="https://github.com/Luca13-cmyk/Agoge-Theme" target="_blank" class="btn btn-primary">Agogê</a>
+                        </div>
+                      </div>
+      
+      
+      <!-- <img src="img/p3.jpg" data-tags="Photographers, Filmmakers" alt="Deer" />
+      <img src="img/p4.jpg" data-tags="Designers" alt="New York Street Map" />
+      <img src="img/p5.jpg" data-tags="Photographers, Filmmakers" alt="Trumpet Player" /> 
+      <img src="img/p6.jpg" data-tags="Designers, Illustrators" alt="Typographic Study" />
+      <img src="img/p7.jpg" data-tags="Photographers" alt="Bicycle Japan" />
+      <img src="img/p8.jpg" data-tags="Designers" alt="Aqua Logo" />   
+      <img src="img/p9.jpg" data-tags="Animators, Illustrators" alt="Ghost" /> -->
+    </div>
+ 
+          </section>
+          <footer id="nav-bar-pentest">
+
+
+
+
+          </footer>
+          
+        </main>
+      </div>
+    </div>
+    <div class="content-scrollTop-per">
+      <a id="scrollTopLink" href="#topPage"> <i  class="fas fa-angle-double-up"></i></a>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js.js"></script>
+  <script src="utilies.js"></script>
+  <script>
+
+  </script>
+  <script src="filter-tags.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+     
+</body>
+</html>

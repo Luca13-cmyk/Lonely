@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube Perso</title>
+	<link rel="shortcut icon" href="/icon_title/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css">
+    <style>
+    #pageloader-overlay,header{top:0;left:0;position:fixed;width:100%}*,::after,::before{box-sizing:border-box}body,html{padding:0;margin:0;font-family:'Roboto Condensed',sans-serif}body,main{background:#000;color:#fff}main{width:auto}.page{margin-top:100px}.row{justify-content:space-between}section{width:40%;height:540px;padding:20px;background:#222;border-radius:8px;border:1px ridge #666;margin-top:85px;cursor:move;position:relative}section a{position:absolute;top:10px;right:-5px}.container .row section iframe{width:100%;height:88%}.container-fluid{height:100%!important}header{height:75px;padding:20px 50px;background:#000;z-index:45;-webkit-transition:.45s ease;transition:.45s ease}header.move{background:#222}header .menu{height:100%;max-width:97%}header .menu nav{width:100%}a:link,header .menu nav a:visited{float:right;padding-right:15px;color:red;letter-spacing:.045em;text-decoration:none;font-size:19px;transition:.42s linear}.fa-times,a.current,a:hover{color:#dcdcdc!important}section a .fa-times:hover{color:#fff!important}::-webkit-scrollbar{width:7px;height:4px}::-webkit-scrollbar-thumb{background:#444;border-radius:6px}#pageloader-overlay{opacity:0;background:-webkit-gradient(linear,right top,left top,from(#000),to(#222));background:linear-gradient(to left,#000,#222);height:100%;z-index:9998;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}#pageloader-overlay.visible{opacity:1}#pageloader-overlay.hidden{opacity:0;height:0;width:0;z-index:-10000}#pageloader-overlay .loader-wrapper-outer{background-color:transparent;z-index:9999;margin:auto;width:100%;height:100%;overflow:hidden;display:table;text-align:center;vertical-align:middle}#pageloader-overlay .loader-wrapper-inner{display:table-cell;vertical-align:middle}#pageloader-overlay .loader{margin:auto;font-size:10px;position:relative;text-indent:-9999em;border-top:8px solid hsla(0,0%,0%,.842);border-right:8px solid rgba(5,5,5,.842);border-bottom:8px solid hsla(0,0%,0%,.842);border-left:8px solid #ff0303;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-animation:pageloader 1.1s infinite linear;animation:pageloader 1.1s infinite linear;transition:.45 ease}#pageloader-overlay .loader,#pageloader-overlay .loader:after{border-radius:50%;width:50px;height:50px}@-webkit-keyframes pageloader{0%{-webkit-transform:rotate(0);transform:rotate(0)}50%{border-left:8px solid rgba(61,4,233,.945)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes pageloader{0%{-webkit-transform:rotate(0);transform:rotate(0)}50%{border-left:8px solid rgba(61,4,233,.945)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.accordion{background-color:transparent;color:#666;margin:0;padding:0;outline:0;overflow:auto}.accordion li{padding:0;list-style-type:none}.accordion-control{background-color:#303030;color:#fff;position:relative;display:block;width:100%;padding:.5em .5em .5em .7em;margin:0;cursor:pointer;border-left:none;border-right:none;border-bottom:none;border-top:1px solid #666}.accordion-control:active,.accordion-control:focus{outline:0!important}.accordion-control .fa-caret-down{position:absolute;left:10px;top:50%;transform:translateY(-50%);transition:185ms linear}.down-open{transform:rotate(180deg) translateY(40%)!important}#meusVIdeos th{position:relative}#meusVIdeos th .fa-caret-down{position:absolute;left:10px;top:50%;transform:translateY(-50%);transition:185ms linear}.accordion-panel{padding:13px;background:#555;display:none}.accordion-panel p{margin:20px}.accordion-panel img{display:block;clear:left}div[data-page_content=hide],md-backdrop{display:none}.no-js body{background-color:red}noscript{position:absolute;top:71px;font-size:22px;color:#000}input[type=range]{height:35px;-webkit-appearance:none;background:0 0}input[type=range]:focus{outline:0}input[type=range]::-webkit-slider-runnable-track{width:100%;height:7px;cursor:pointer;animate:.2s;box-shadow:0 0 0 #000;background:#CCC;border-radius:34px;border:0 solid #000}input[type=range]::-webkit-slider-thumb{box-shadow:0 0 0 #FFF;border:2px solid #FFF;height:27px;width:28px;border-radius:27px;background:#FF0D25;cursor:pointer;-webkit-appearance:none;margin-top:-11px;transition:.3s linear}input[type=range]:focus::-webkit-slider-runnable-track{background:#CCC}input[type=range]::-moz-range-track{width:100%;height:7px;cursor:pointer;animate:.2s;box-shadow:0 0 0 #000;background:#CCC;border-radius:34px;border:0 solid #000}input[type=range]::-moz-range-thumb{box-shadow:0 0 0 #FFF;border:2px solid #FFF;height:27px;width:28px;border-radius:27px;background:#FF0D25;cursor:pointer}input[type=range]:focus::-webkit-slider-thumb,input[type=range]:hover::-webkit-slider-thumb{background:#87ceeb}input[type=range]::-webkit-progress-value{background:#fa0303}input[type=range]:focus::-moz-range-thumb,input[type=range]:hover::-moz-range-thumb{background:#87ceeb}input[type=range]::-moz-range-progress{background:#fa0303;border-radius:4px;height:8px}input[type=range]::-ms-track{width:100%;height:7px;cursor:pointer;animate:.2s;background:0 0;border-color:transparent;color:transparent}input[type=range]::-ms-fill-lower{background:#CCC;border:0 solid #000;border-radius:68px;box-shadow:0 0 0 #000}input[type=range]::-ms-fill-upper{background:#CCC;border:0 solid #000;border-radius:68px;box-shadow:0 0 0 #000}input[type=range]::-ms-thumb{margin-top:1px;box-shadow:0 0 0 #FFF;border:2px solid #FFF;height:27px;width:28px;border-radius:27px;background:#FF0D25;cursor:pointer}input[type=range]:focus::-ms-fill-lower{background:#CCC}input[type=range]:focus::-ms-fill-upper{background:#CCC}#menu-config{position:fixed;top:0;bottom:0;right:0;-webkit-transform:translate(900px,0);transform:translate(900px,0);padding:0;margin:0;width:-webkit-calc(50% - 25px);width:calc(50% - 25px);max-width:320px;height:100%;background:#000;z-index:20000;transition:.5s linear}.open-sidebar-config{-webkit-transform:translate(0,0)!important;transform:translate(0,0)!important}#menu-config .sidebar-config{position:relative;top:50%;left:50%;transform:translate(-50%,-50%);width:85%;height:92%;background:#000;border:1px ridge grey;box-shadow:0 0 20px hsla(0,1%,36%,.794);border-radius:4px;overflow-y:auto}#menu-config .sidebar-config .content-top-sidebar{position:fixed;top:0;left:0;width:100%;height:75px;background:#000;border-bottom:2px ridge grey;z-index:180}#menu-config .sidebar-config .content-top-sidebar h3{text-align:center;padding-top:10px;color:#fff}#menu-config .sidebar-config .content-itens-sidbar-config{position:relative;padding:25px;height:100%;width:100%}#menu-config .sidebar-config .content-itens-sidbar-config input{margin-top:85px;width:100%}#menu-config .sidebar-config .content-itens-sidbar-config input~output{color:#fff;position:absolute;left:50%;transform:translateX(-50%)}.drawer-backdrop,md-backdrop{top:0;bottom:0;left:0;right:0}#menu-config .sidebar-config .content-itens-sidbar-config .accordion{margin-top:45px}md-backdrop.md-opaque{opacity:.48}md-backdrop.md-opaque,md-backdrop.md-opaque.md-default-theme{background-color:rgba(33,33,33,1)}.drawer-backdrop{position:fixed;-webkit-transition:opacity 450ms;transition:opacity 450ms;z-index:79}md-backdrop{-webkit-transition:opacity 450ms;transition:opacity 450ms;position:absolute;z-index:1500}.modal-per{position:fixed;z-index:50000000;padding:50px;background-color:#555;border-radius:5px}#add-frame,.modal-close-per{outline:0;background:#06d106;color:#fff;cursor:pointer}#modal{background-color:#fff;text-align:center;clear:both;padding:15px;border:10px solid #e2e2e2;color:#000}.modal-close-per{position:absolute;right:10px;bottom:10px;border-radius:10px;border:none}div[data-page_content=show]{display:block}#video-toggle{border-radius:10px;border:none;background:#555;outline:0;padding:13px;width:175px;height:22px}#add-frame{border-radius:5px;border:none}.close,.toast-header{color:#fff!important}.toast{background-color:#545454!important}.toast-header{background-color:#000!important}.how-working{padding:20px 50px;text-align:center}.table{width:80%!important;margin:auto!important;text-align:center!important}.table td a:link,.table td a:visited{color:#fff!important;text-decoration:none;padding-right:0!important;float:none!important}.table td a:hover{opacity:.45}th[data-sort=titulo]{cursor:pointer;background:#01aff3}#adicionar_meusVideos h3{color:#fff;text-align:center}#adicionar_meusVideos #nome-video{margin-top:10px!important;margin-bottom:10px!important}
+    </style>
+        
+        
+                        </head>
+                        <body>
+                            <noscript>Ative o javaScript</noscript>
+                            
+                            <!-- start with js -->
+                            <script>
+                                
+                                //js enable
+                                
+                                {
+                                    let elDocument = document.documentElement;
+                                    elDocument.className = elDocument.className.replace(/(^|\s)no-js(\s|$)/, '$1');
+                                }
+                                
+                                
+                            </script>
+                            
+                            
+                            
+                            <!-- start loader -->
+                            
+                            <script>
+                                // loader
+                                function GetBrowserInfo() {
+                                    var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+                                    
+                                    var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+                                    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+                                    
+                                    var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+                                    var isIE = /*@cc_on!@*/false || !!document.documentMode;   // At least IE6
+                                    if (isOpera) {
+                                        return 1;
+                                    }
+                                    else if (isFirefox) {
+                                        return 2;
+                                    }
+                                    else if (isChrome) {
+                                        return 3;
+                                    }
+                                    else if (isSafari) {
+                                        return 4;
+                                    }
+                                    else if (isIE) {
+                                        return 5;
+                                    }
+                                    else {
+                                        return 0;
+                                    }
+                                } 
+                                
+                                if (GetBrowserInfo() === 3) {
+                                    var body = document.getElementsByTagName("body")[0];
+                                    body.innerHTML += "<div id=\"pageloader-overlay\" class=\"visible incoming\"><div class=\"loader-wrapper-outer\"><div class=\"loader-wrapper-inner\"><div class=\"loader\"></div></div></div></div>"
+                                    
+                                    
+                                }
+                                
+                                
+                                
+                                
+                                
+                            </script>
+                            
+                            <!-- end loader -->
+	                        <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap" style=""></md-backdrop>	
+                            <div id="modal">
+                                <b>Isso é um pequeno aplicativo web para ver videos sem travar, do youtube. Ele salva os dados automaticamente. Se quiser limpar, no menu tem a opção limpar dados. Ele não foi trabalhado para ser responsivo, por isso, só deve ser usado em telas com boa largura<br /><em style="color: red;"><small>Desenvolvido por Luca Negrette</small></em></b>
+                            </div>
+                            <div class="ttaost-per" aria-live="polite"  aria-atomic="true" style="position: relative; min-height: 200px;">
+                                    <div class="toast hide" style="position: fixed; top: 0; right: 0;z-index: 25000000;">
+                                      <div class="toast-header">
+                                            <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                                                <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+                                                <g class="layer">
+                                                 <title>Layer 1</title>
+                                                 <path d="m3.73624,9.56357l0,0c0,-1.81018 1.43305,-3.27763 3.20082,-3.27763l1.45492,0l0,0l6.9836,0l13.09424,0c0.84891,0 1.66305,0.34532 2.26332,0.95999c0.60027,0.61467 0.9375,1.44835 0.9375,2.31763l0,8.19407l0,0l0,4.91644l0,0c0,1.81018 -1.43305,3.27763 -3.20082,3.27763l-13.09424,0l-9.12321,8.33424l2.13961,-8.33424l-1.45492,0c-1.76776,0 -3.20082,-1.46744 -3.20082,-3.27763l0,0l0,-4.91644l0,0l0,-8.19407z" fill="#ffffff" id="svg_6" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="5"/>
+                                                </g>
+                                               </svg>
+                                        <strong class="mr-auto">Aviso</strong>
+                                        <small>Agora</small>
+                                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="toast-body">
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                 
+                            <header>
+                                <div class="menu">
+                                    <nav>
+                                        <a id="toggle" style="padding-left: 15px;" href="#"><i style="font-size: 25px;" class="fas fa-bars"></i></a>
+                                        <a data-tab="change" href=""><i class="fas fa-graduation-cap"></i>Aula</a>
+                                        
+                                        <a data-tab="change"  class="current" href="#primeiro"><i   class="fas fa-umbrella-beach"></i>Lazer</a>
+                                        
+                                        <a data-tab="change"  href=""><i class="fas fa-music"></i>Musica</a>
+                                        <a data-tab="change"  href="#segundo"><i class="fas fa-book"></i>Como funciona</a>
+                                        <input type="text" name="video-toggle" id="video-toggle" placeholder="Trocar por...">
+                                        <input type="submit" id="add-frame" value="Trocar">
+                                        
+                                        <a  style="float: left;" href="index.html"><i class="fas fa-home"></i>Voltar</a>
+
+                                    </nav>
+                                </div>
+                            </header>
+                            <div id="menu-config">
+                                <div class="sidebar-config">
+                                    <div class="content-top-sidebar">
+                                        <h3><b>Menu</b></h3>
+                                    </div>
+                                    <div class="content-itens-sidbar-config">
+                                        <input type="range" name="range" id="changeValue" min="0" max="1" value="1">
+                                        <output id="changeOutput">opacidade 1</output>
+                                        <!-- <input type="range" name="range" id="changeValue2" min="16" max="25" value="16">
+                                        <output  id="changeOutput2">16px</output> -->
+                                        
+                                        <ul class="accordion">
+                                            <li>
+                                                <button class="accordion-control"><i  class="fas fa-caret-down"></i>Adicionar aos meus vídeos</button>
+                                                <div  id="adicionar_meusVideos" class="accordion-panel">
+
+                                                    <div>
+                                                        <h3>Dê um nome</h3>
+                                                        <input type="text" class="form-control" id="nome-video">
+                                                        <button id="addMeu" style="margin-top: 10px;" class="btn  btn-primary" type="button">Adicionar à meus vídeos</button>
+                
+                                                    </div> 
+                                                </div> 
+                                            </li>
+                                            <li>
+                                                <button class="accordion-control"><i  class="fas fa-caret-down"></i>Dados</button>
+                                                <div id="remover_dados" class="accordion-panel"><button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Essa opção irá remover todos os dados armazenados nessa página">
+                                                       Limpar dados
+                                                      </button></div>
+                                            </li>
+                                            <li>
+                                                <button class="accordion-control"><i class="fas fa-caret-down"></i> Meus videos</button>
+                                                <div class="accordion-panel">
+
+                                                    <table id="meusVIdeos" class="table table-dark col-l">
+                                                        <thead>
+                                                          <tr>
+                                                           
+                                                            <th data-sort="titulo" scope="col"><i class="fas fa-caret-down"></i>Titulo</th>
+                                                            
+                                                          </tr>
+                                                        </thead>
+                                                        
+                                                      </table>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <main>
+                                <div data-page_content="show" id="primeiro" class="container page">
+                                    <div  class="row">
+                                        <section  class="ui-widget-content"><a href=""><i class="fas fa-times"></i></a>
+                                            <div id="one" class="container-fluid">
+                                                <script>
+                                                    
+                                                    const rayError = [];
+                                                    try {
+                                                        var one = document.getElementById("one");
+                                                        
+                                                        
+                                                        if (one !== null && typeof one !== 'undefined'){
+                                                            one.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/7TaklJatpY8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                                                            localStorage.removeItem('err');
+                                                            {
+                                                                let conteudo = one.innerHTML;
+                                                                console.warn(conteudo);
+                                                            }
+                                                        } else {
+                                                            throw new Error('one não esta definido ou erro no servidor Google');
+                                                        }
+                                                        
+                                                    } 
+                                                    catch (error) {
+                                                        localStorage.err +=   error.name + ' ' + error.message + ' ';
+                                                        console.log(error.name + ' ' + error.message);
+                                                    } 
+                                                    finally {
+                                                        if (localStorage.err){
+                                                            rayError.push(localStorage.err);
+                                                            debugger;
+                                                            
+                                                        } 
+                                                        
+                                                    }   
+                                                    // var casa = 40;
+                                                    // {
+                                                        //     let casa = 45;
+                                                        //     alert(casa)
+                                                        // }
+                                                        
+                                                    </script>
+                                                    
+                                                </div> 
+                                            </section>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                    <div data-page_content="hide" id="segundo" class="container page">
+                                            <div  class="how-working">
+                                                    <h1>Comece abrindo a página que está o vídeo</h1>
+                                                    <p class="lead">Alguns vídeos  não irão reproduzir, por causa dos direitos autorais.</p>
+                                                    <p>Neste exemplo, após clicar em compartilhar,  algumas opções estarão disponíveis. Escolha a opção<span style="color: deeppink;">incorporar codigo</span></p>
+                                                    <img class="img-step-of-how" src="img/como1.png" alt="passo1" width="500" height="500">
+                                                    <h2 class="mt-4">Em seguida</h2>
+                                                    <p>Vocẽ verá alguns códigos em sua frente, mas irá copiar apenas a parte marcada em azul na imagem abaixo.</p>
+                                                    <img src="img/como2.png" alt="passo2" width="500" height="500"><br />
+                                                    <hr />
+                                                    <kbd><code>iframe width="560" height="315" src=<b style="color: skyblue">https://www.youtube.com/embed/5TvrjYl1uew</b> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen iframe</code></kbd><br />
+                                                    <hr />
+                                                    <h2>Agora é só colar</h2>
+                                                    <hr />
+                                                    <img src="img/como3.png" alt="passo3" width="500" height="500" />
+                                                </div>
+                                            </div>
+                                   
+                                </main>
+                                
+                                
+                                
+                                
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                <script> window.jQuery || document.write('<script type="text/javascript" src="jquery-3.3.1.min.js"><\/script>')</script>
+                                <script
+                                src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+                                integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+                                crossorigin="anonymous"></script>
+                                
+                                <script>
+                                // $(function(){const o=function(){var e=$(window),t=$('<div class="modal-per" />'),a=$('<div class="modal-content-per" />'),n=$('<button role="button" class="modal-close-per">Iniciar</button>');return t.append(a,n),n.on("click",function(e){e.stopPropagation(),e.preventDefault(),$("md-backdrop").hide(),o.close()}),{center:function(){var o=Math.max(e.height()-t.outerHeight(),0)/2,a=Math.max(e.width()-t.outerWidth(),0)/2;t.css({top:o,left:a})},open:function(e){a.empty().append(e.content),t.css({width:e.width||"auto",height:e.height||"auto"}).appendTo("body"),o.center(),$(window).on("resize",o.center)},close:function(){a.empty(),t.detach(),$(window).off("resize",o.center)}}}();var e=$("#modal").detach();$(window).on("load",function(){o.open({content:e,width:340,height:470}),$("md-backdrop").show()});var t=[],a=[],n=$('<i class="avisos" style="color: red;margin-top: 5px;margin-bottom: 5px;">Você deve fornecer um nome antes de adicionar, e a entrada deve ter um link</i>');$("#nome-video").after(n),$("#nome-video").on("input",function(){var o=$("#nome-video").val();o.length<1?$(".avisos").text("Você deve fornecer um nome antes de adicionar"):$(".avisos").text("")}),$("#addMeu").on("click",function(o){o.preventDefault(),o.stopPropagation();var e=$("#nome-video").val(),n=$("#video-toggle").val();if(n.length<1||e.length<1)return void(n.length<1?$(".avisos").text("coloque um link na entrada"):$(".avisos").text("Você deve fornecer um nome antes de adicionar"));$(".avisos").text(""),t.length>0&&(t=[]),t.push({$link:localStorage.val,nome:e});var r=t[0].$link,c=t[0].nome;if("undefined"==typeof s)var s=[];s.push({$link:r,$nome:c}),console.log(s);var l=$("<tr></tr>");l.append($("<td></td>").html('<a data-cache_save="load" href="'+s[0].$link+'" >'+s[0].$nome+"</a>")),a.push({$element:l}),a.forEach(function(o){d.append(o.$element)}),i=d.html(),localStorage.tableBody=i,$(".toast-body").html('<b>Video <i style="color: skyblue">'+e+"</i> adicionado aos favoritos</b>"),$(".toast").toast("show")});var i,d=$("<tbody></tbody>");$("#meusVIdeos").append(d),$(window).on("load",function(){localStorage.tableBody&&$("tbody").html(localStorage.tableBody),$('a[data-cache_save="load"]').on("click",function(o){o.preventDefault(),o.stopPropagation(),c.attr("src",this.href),localStorage.val=this.href});var o;$("#meusVIdeos");$('th[data-sort="titulo"]').on("click",function(e){e.preventDefault(),e.stopPropagation(),o=$("tbody").find("tr").toArray(),$(this).children("i.fa-caret-down").not(":animated").toggleClass("down-open");var t,a=$(this).data("sort");$(this).children("i.fa-caret-down").hasClass("down-open")?($(this).removeClass("descending").addClass("ascending"),r.hasOwnProperty(a)&&(t=$("table").find("th").index(this),o.sort(function(o,e){return o=$(o).find("td").eq(t).text(),e=$(e).find("td").eq(t).text(),r[a](o,e)})),$("tbody").append(o)):($(this).removeClass("ascending").addClass("descending"),$("tbody").append(o.reverse()))})});const r={titulo:function(o,e){return o=o.replace(/^the /i,""),e=e.replace(/^the /i,""),o<e?-1:o>e?1:0}};var c=$("iframe");$("#add-frame").on("click",function(o){var e=$("#video-toggle").val();localStorage.val=e;try{c.attr("src",e),$("#video-toggle").val("")}catch(o){alert(o.message)}}),$(".toast").toast({delay:5e3}),$("#changeValue").on("input",function(o){o.stopPropagation(),$("header").css({opacity:$(this).val()+.45}),$("#changeOutput").text("Opacidade:  "+$(this).val())}),$("nav").on("click",'a[data-tab="change"]',function(o){o.preventDefault(),o.stopPropagation();var e=$(this),t=this.hash;t&&!e.is(".current")&&($('div[data-page_content="show"]').attr("data-page_content","hide"),$("nav a.current").removeClass("current"),e.addClass("current"),$(t).attr("data-page_content","show").hide().fadeIn("slow"))}),$("#remover_dados").on("click",function(o){o.preventDefault(),o.stopPropagation(),localStorage.clear(),$(".toast-body").html("<b>Todos os dados nessa página foram removidos</b>"),$(".toast").toast("show")}),$("nav").on("click","#toggle",function(o){o.preventDefault(),o.stopPropagation(),$("#menu-config").addClass("open-sidebar-config"),$("md-backdrop").show()}),$("md-backdrop").on("click",function(o){o.stopPropagation(),$("#menu-config").removeClass("open-sidebar-config"),$(this).hide()}),$(".accordion").on("click",".accordion-control",function(o){o.preventDefault(),$(this).addClass("active-accordion-menu-config").next(".accordion-panel").not(":animated").slideToggle().prev(".accordion-control").children(".fa-caret-down").toggleClass("down-open")}),$("section").each(function(){$(this).resizable({animate:!1})}),$("section").draggable(),$(window).on("scroll",function(){$("header").offset().top>0?$("header").addClass("move"):$("header").removeClass("move")}),$("section").on("click","a",function(o){o.preventDefault(),o.stopPropagation(),$(this).parent().fadeOut("slow")}),$(window).on("load",function(){$('div[id="pageloader-overlay"]').fadeOut(1900),c.attr("src",localStorage.val)})});
+                                $( function() {
+                                        
+
+                                        {
+                                    
+                                    
+                                            const modal = (function(){
+                                    
+                                                var $window = $(window);
+                                                var $modal = $("<div class=\"modal-per\" />");
+                                                var $content = $("<div class=\"modal-content-per\" />");
+                                                var $close = $("<button role=\"button\" class=\"modal-close-per\">Iniciar</button>");
+                                    
+                                                $modal.append($content, $close);
+                                    
+                                                $close.on("click", function(e){
+                                                    e.stopPropagation();
+                                                    e.preventDefault();
+                                                    $("md-backdrop").hide();
+                                                    modal.close();
+                                                });
+                                    
+                                    
+                                                return {
+                                    
+                                    
+                                                    center: function(){
+                                    
+                                                        var top = Math.max($window.height() - $modal.outerHeight(), 0) / 2;
+                                                        var left = Math.max($window.width() - $modal.outerWidth(), 0) / 2;
+                                    
+                                                        $modal.css({
+                                                            top: top,
+                                                            left: left
+                                                        });
+                                    
+                                    
+                                                    },
+                                                    open: function(settings){
+                                                        $content.empty().append(settings.content);
+                                    
+                                                        $modal.css({
+                                                            width: settings.width || 'auto',
+                                                            height: settings.height || 'auto'
+                                                        }).appendTo("body");
+                                    
+                                                        modal.center();
+                                                        $(window).on("resize", modal.center);
+                                    
+                                                    },
+                                                    close: function(){
+                                                        $content.empty();
+                                                        $modal.detach();
+                                                        $(window).off("resize", modal.center);
+                                                    }
+                                    
+                                    
+                                                }
+                                    
+                                    
+                                    
+                                    
+                                            }());
+                                    
+                                    
+                                                var $modal_show = $('#modal').detach();
+                                                $(window).on("load", function(){
+                                    
+                                                    modal.open({
+                                                        content: $modal_show,
+                                                        width: 340,
+                                                        height: 470
+                                                    });
+                                    
+                                                    $("md-backdrop").show();
+                                                    
+                                                    
+                                           
+                                    
+                                    
+                                            });
+                                            
+                                         }
+                                    
+                                        //  $("div[\"data-page_content\"]").each( function(){
+                                    
+                                        //     var $this = $(this);
+                                        //     var 
+                                    
+                                        //  })
+                                        var meusVideos = [];
+                                        var listMeusVideos;
+                                        var cruzado = [];
+                                        // $("#nome-video").on("input", function(){
+                                        //     localStorage.nom = this.value;
+                                        // })
+                                        var $alert = $("<i class=\"avisos\" style=\"color: red;margin-top: 5px;margin-bottom: 5px;\">Você deve fornecer um nome antes de adicionar, e a entrada deve ter um link</i>");
+                                        
+                                        $("#nome-video").after($alert);
+                                        $("#nome-video").on("input", function(){
+                                    
+                                            var val = $("#nome-video").val();
+                                            
+                                            if (val.length < 1  ){
+                                    
+                                    
+                                    $(".avisos").text("Você deve fornecer um nome antes de adicionar");
+                                    
+                                    
+                                    } else {
+                                    $(".avisos").text("");
+                                    
+                                    }
+                                    })
+                                    
+                                            $("#addMeu").on("click", function(e){
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                var val = $("#nome-video").val();
+                                                var $video_val = $("#video-toggle").val();
+                                                if (($video_val.length < 1) || (val.length < 1)){
+                                                    $video_val.length < 1 ? $(".avisos").text("coloque um link na entrada") : $(".avisos").text("Você deve fornecer um nome antes de adicionar");
+                                                    return
+                                                } else {
+                                                    $(".avisos").text("");
+                                                } 
+                                                 
+                                    
+                                                
+                                                
+                                                
+                                                
+                                                if (meusVideos.length > 0){
+                                                    meusVideos = [];
+                                                }
+                                                        meusVideos.push({
+                                                            $link: localStorage.val,
+                                                            nome: val
+                                                            
+                                                        })
+                                                    // meusVideos.forEach( function(i){
+                                                        // if ( !localStorage.lin && !localStorage.nom){
+                                                            var lin = meusVideos[0].$link;
+                                                            var nom = meusVideos[0].nome;
+                                                        // } else {
+                                    
+                                                        //     localStorage.lin += meusVideos[0].$link;
+                                                        //     localStorage.nom += meusVideos[0].nome;
+                                    
+                                                        // }
+                                    
+                                                // })
+                                                        if (typeof listMeusVideos === 'undefined'){
+                                    
+                                                             var listMeusVideos = [];
+                                                        }
+                                    
+                                    
+                                                listMeusVideos.push({
+                                                    $link: lin,
+                                                    $nome: nom
+                                    
+                                                });
+                                                
+                                            console.log(listMeusVideos);
+                                            // listMeusVideos.forEach( function(i){
+                                                
+                                                var $row = $("<tr></tr>");
+                                                $row.append($("<td></td>").html('<a data-cache_save="load" href="' + listMeusVideos[0].$link + '" >' + listMeusVideos[0].$nome + '</a>'));
+                                                cruzado.push({
+                                                    $element: $row
+                                                })
+                                              
+                                                
+                                    
+                                            // });
+                                            
+                                    
+                                                
+                                            cruzado.forEach( function(row){
+                                                $tbody.append(row.$element);    
+                                            });
+                                             marca_ção = $tbody.html();
+                                             localStorage.tableBody = marca_ção;
+                                            //  $(".toast-body").html("<b> Video adcionado com sucesso<b>");
+                                            
+                                            // alert($(".toast").css('right'))
+                                    
+                                    
+                                            $(".toast-body").html("<b>Video " + "<i style=\"color: skyblue\">" +  val + "</i>" +  " adicionado aos favoritos</b>");
+                                             $('.toast').toast('show');
+                                                
+                                            })
+                                            var marca_ção;
+                                            var $tbody = $("<tbody></tbody>");
+                                            $("#meusVIdeos").append($tbody);
+                                    
+                                            $(window).on("load", function(){
+                                                if (localStorage.tableBody){
+                                    
+                                                    $("tbody").html(localStorage.tableBody);
+                                                }
+                                                $("a[data-cache_save=\"load\"]").on("click", function(e){
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                    
+                                                    iframe.attr("src", this.href);
+                                                    localStorage.val = this.href;
+                                                })
+                                                var $meusvideos = $("#meusVIdeos");
+                                                //
+                                                //
+                                                var linhas; 
+                                                
+                                    
+                                                
+                                                
+                                                
+                                                $("th[data-sort=\"titulo\"]").on("click", function(e){
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    linhas = $("tbody").find("tr").toArray();
+                                                    
+                                                    // console.log(linhas);
+                                    
+                                                    $(this).children("i.fa-caret-down").not(":animated").toggleClass("down-open");
+                                                    var order = $(this).data("sort");
+                                                    var column;
+                                    
+                                                     
+                                                        if ($(this).children("i.fa-caret-down").hasClass("down-open")){
+                                                            $(this).removeClass("descending").addClass("ascending");
+                                    
+                                                            if (compare.hasOwnProperty(order)){
+                                                            column = $('table').find("th").index(this);
+                                                            
+                                                            linhas.sort(function(a, b){
+                                                                a = $(a).find("td").eq(column).text();
+                                                                b = $(b).find("td").eq(column).text();
+                                                            //  console.log(a + '-' + b + ' = ' + (b - a));
+                                                                return compare[order](a, b);
+                                    
+                                                            });
+                                                        }
+                                                            $("tbody").append(linhas);
+                                                        } else {
+                                                            $(this).removeClass("ascending").addClass("descending");
+                                    
+                                                            $("tbody").append(linhas.reverse());
+                                    
+                                                        }
+                                                        
+                                                        
+                                                        
+                                                    
+                                                })
+                                            });
+                                    
+                                    
+                                    
+                                            const compare = {
+                                                titulo: function(a,b){
+                                                    a = a.replace(/^the /i, '');
+                                                    b = b.replace(/^the /i, '');
+                                    
+                                                    if (a < b){
+                                                        return -1
+                                                    } else {
+                                                        return a > b ? 1 : 0;
+                                                    }
+                                    
+                                                    
+                                                    
+                                    
+                                                }
+                                            }
+                                        
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        var iframe = $("iframe");
+                                    
+                                            $("#add-frame").on("click", function(e){
+                                                var val = $("#video-toggle").val();
+                                                localStorage.val = val;
+                                                try {
+                                                    
+                                                    iframe.attr("src", val);
+                                                    $("#video-toggle").val('');
+                                    
+                                                } catch (error) {
+                                                    alert(error.message);
+                                                }
+                                                // finally {
+                                    
+                                                // }
+                                                
+                                                
+                                            })
+                                    
+                                    
+                                            
+                                            $('.toast').toast({
+                                                delay: 5000
+                                            });
+                                    
+                                            $("#changeValue").on("input", function(e){
+                                                e.stopPropagation();
+                                                $("header").css({
+                                                   'opacity': $(this).val() + 0.45 
+                                                })
+                                                $("#changeOutput").text('Opacidade: ' + ' ' +  $(this).val());
+                                    
+                                                
+                                            });
+                                    
+                                         $("nav").on("click", "a[data-tab=\"change\"]", function(e){
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            
+                                            var $link = $(this);
+                                            var id = this.hash;
+                                    
+                                            if (id && !$link.is(".current")) {
+                                                $("div[data-page_content=\"show\"]").attr("data-page_content", "hide");
+                                                $("nav a.current").removeClass("current");
+                                                
+                                                $link.addClass("current");
+                                                $(id).attr("data-page_content", "show").hide().fadeIn("slow");
+                                            }
+                                    
+                                         });
+                                         $("#remover_dados").on("click", function(e){
+                                             e.preventDefault();
+                                             e.stopPropagation();
+                                    
+                                             localStorage.clear();
+                                            
+                                            $(".toast-body").html("<b>Todos os dados nessa página foram removidos</b>");
+                                             $('.toast').toast('show');
+                                    
+                                         })
+                                    
+                                    
+                                        $("nav").on("click", "#toggle", function(e){
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                    
+                                            $("#menu-config").addClass("open-sidebar-config");
+                                            $("md-backdrop").show();
+                                    
+                                    
+                                        });
+                                        $("md-backdrop").on("click", function(e){
+                                            e.stopPropagation();
+                                            $("#menu-config").removeClass("open-sidebar-config");
+                                            $(this).hide();
+                                        })
+                                        $(".accordion").on("click", ".accordion-control", function(e){
+                                            e.preventDefault();
+                                    
+                                            
+                                            $(this).addClass("active-accordion-menu-config")
+                                            .next(".accordion-panel")
+                                            .not(":animated")
+                                            .slideToggle()
+                                            .prev(".accordion-control")
+                                            .children(".fa-caret-down").toggleClass("down-open");
+                                    
+                                            
+                                    
+                                        });
+                                        
+                                        $( "section" ).each(function(){
+                                            $(this).resizable({
+                                                animate: false
+                                            });
+                                        })
+                                        $( "section" ).draggable();
+                                        
+                                        
+                                        $(window).on("scroll", function(){
+                                            
+                                            if ($("header").offset().top > 0){
+                                                $("header").addClass("move");
+                                            } else {
+                                                $("header").removeClass("move");
+                                            }
+                                            
+                                            
+                                        })
+                                        
+                                        $("section").on("click", "a", function(e){
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            $(this).parent().fadeOut('slow');
+                                        })
+                                        $(window).on("load", function(){
+                                            
+                                            $("div[id=\"pageloader-overlay\"]").fadeOut(1900);
+                                            iframe.attr("src", localStorage.val);
+                                            
+                                        });
+                                        
+                                    } );
+                                    
+                                    
+                                </script>
+                               
+                                
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> 
+                            </body>
+                            </html>

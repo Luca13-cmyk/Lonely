@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shell</title>
+	<link rel="shortcut icon" href="/icon_title/icon.png" type="image/png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="loader.css">    
+    <link rel="stylesheet" href="responsible.css">
+    <link rel="stylesheet" href="ferramentas.css">
+    <link rel="stylesheet" href="header1.0.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="pace2/pace.js"></script>
+    <link href="pace2/themes/red/pace-theme-minimal.css" rel="stylesheet" />
+    
+    <style>
+    ::-webkit-scrollbar
+{
+    width: 7px;
+    height: 4px;
+    
+    
+}
+::-webkit-scrollbar-thumb
+{
+    background:  rgb(9, 155, 253);
+    border-radius: 6px;
+    
+}
+#nav-bar-pentest  a.current
+  {
+    color: rgb(9, 155, 253) !important;
+    border-bottom: none;
+  }
+  body.dark-per-theme .header1
+{
+    box-shadow: 1px 4px 17px 0px rgb(9, 155, 253);
+}
+.theme-current-per,
+.theme-current-per:hover,
+.theme-current-per:focus
+
+{
+    background: rgb(9, 155, 253) !important;
+}
+.header1 .dropdown-item:focus, .header1 .dropdown-item:hover 
+
+{
+    background: rgb(9, 155, 253) !important;
+    color: #fff;
+}
+.page-link:hover
+{
+  color:  rgb(9, 155, 253) !important;
+}
+body.dark-per-theme .page-item .page-link:hover {
+  color:   rgb(9, 155, 253) !important;
+}
+
+/* RANGE */
+
+input[type=range] {
+                            
+                            height: 35px;
+                            -webkit-appearance: none;
+                            background: transparent;
+                            padding-right: 13px;
+                            
+                          }
+                          input[type=range]:focus {
+                            outline: none;
+                          }
+                          input[type=range]::-webkit-slider-runnable-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            box-shadow: 0px 0px 0px #000000;
+                            background: #888;
+                            border-radius: 34px;
+                            border: 0px solid #000000;
+                          }
+                          input[type=range]::-webkit-slider-thumb {
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(9, 155, 253) !important;
+                            cursor: pointer;
+                            -webkit-appearance: none;
+                            margin-top: -11px;
+                            transition: 0.3s linear;
+                          }
+                          input[type=range]:focus::-webkit-slider-runnable-track {
+                            background: #CCCCCC;
+                          }
+                          input[type=range]::-moz-range-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            box-shadow: 0px 0px 0px #000000;
+                            background: #CCCCCC;
+                            border-radius: 34px;
+                            border: 0px solid #000000;
+                          }
+                          input[type=range]::-moz-range-thumb {
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(9, 155, 253) !important;
+                            cursor: pointer;
+                          }
+                          input[type=range]:focus::-webkit-slider-thumb,
+                          input[type=range]:hover::-webkit-slider-thumb
+                          
+                          {
+                            background: #000;
+                          }
+                          input[type=range]::-webkit-progress-value
+                          {
+                            background:  rgb(9, 155, 253) !important;
+                          }
+                          input[type=range]:focus::-moz-range-thumb,
+                          input[type=range]:hover::-moz-range-thumb
+                          {
+                            background: #000;
+                          }
+                          input[type=range]::-moz-range-progress
+                          {
+                            background:  rgb(9, 155, 253) !important;
+                            border-radius: 4px;
+                            height: 8px;
+                          }
+                          input[type=range]::-ms-track {
+                            width: 100%;
+                            height: 7px;
+                            cursor: pointer;
+                            animate: 0.2s;
+                            background: transparent;
+                            border-color: transparent;
+                            color: transparent;
+                          }
+                          input[type=range]::-ms-fill-lower {
+                            background: #CCCCCC;
+                            border: 0px solid #000000;
+                            border-radius: 68px;
+                            box-shadow: 0px 0px 0px #000000;
+                          }
+                          input[type=range]::-ms-fill-upper {
+                            background: #CCCCCC;
+                            border: 0px solid #000000;
+                            border-radius: 68px;
+                            box-shadow: 0px 0px 0px #000000;
+                          }
+                          input[type=range]::-ms-thumb {
+                            margin-top: 1px;
+                            box-shadow: 0px 0px 0px #FFFFFF;
+                            border: 2px solid #FFFFFF;
+                            height: 27px;
+                            width: 28px;
+                            border-radius: 27px;
+                            background:  rgb(9, 155, 253) !important;
+                            cursor: pointer;
+                          }
+                          input[type=range]:focus::-ms-fill-lower {
+                            background: #CCCCCC;
+                          }
+                          input[type=range]:focus::-ms-fill-upper {
+                            background: #CCCCCC;
+                          }
+
+                          .boxChangeOutput-per
+                          {
+                            position: relative;
+                            margin-right: 13px;
+                            background: #fff;
+                            border: 1px solid rgb(187, 184, 184);
+                            border-radius: 4px;
+                            padding: 10px;
+                            /* box-shadow: 0 0 5px rgb(0, 0, 0); */
+
+                          }
+                          .boxChangeOutput-per output
+                          {
+                            color:  rgb(9, 155, 253) !important;
+                            font-family: Arial, sans-serif;
+                            font-weight: bold;
+                          }
+                          .header2 .nav2 .container-per .container-titulo-per
+{
+    width: 100%;
+    height: 105px;
+    border-bottom: 2px solid rgb(9, 155, 253) !important;;
+    display: flex;
+    margin-bottom: 45px;
+
+}
+    
+    </style>
+</head>
+<body>
+        
+    
+       
+            
+          <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap"></md-backdrop>
+            
+            <header class=" masthead mb-auto header1">
+              <i class="fas fa-bars"></i>
+                <div class="inner">
+          <a id="go-index" href="index.html"><h3 class="masthead-brand">Lonely</h3></a>
+                  
+                  <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                          <button data-theme="normal" class="dropdown-item" type="button"><b>Tema Normal</b></button>
+                          <button data-theme="dark" class="dropdown-item" type="button"><b>Tema Dark</b></button>
+                          <button data-theme="animado" class="dropdown-item" type="button"><b>Tema Animado</b></button>
+                        </div>
+                      </div>
+                  
+                  <nav class=" nav nav-masthead justify-content-center nav1">
+                    <a class="nav-link" href="Lonely.html">Home</a>
+                    <a class="nav-link active" href="#">Artigos/Documentação</a>
+                    <a class="nav-link" href="programas.html">Programas</a>
+                  </nav>
+                </div>
+              </header>
+            <header class="header2">
+                      <nav class="nav2">
+                          <div class="container-per">
+                                <div class="container-titulo-per">
+                                    <b class="titulo-per"><h3>Documentação</h3></b>
+                                </div>
+                              <a class="link-respo" href="Lonely.html"><i data-icons="icons-nav" class="fas fa-home"></i>Home</a>
+                              <a id="accordion" class="link-respo current" href="#"><i data-icons="icons-nav" class="fas fa-book"></i>Documentação <i id="accordion-angle" class="fas fa-caret-down"></i></a>
+                              <div class="nav-doc-per">
+                                <a data-navper="0" data-nav-doc="doc" href="Documentação.html">Dashboard</a>
+                                <a data-navper="1" data-nav-doc="doc"  href="Pentest.html">Pentest</a>
+                                <a data-navper="2" data-nav-doc="doc" href="Shell.html">Shell-Unix</a>
+                  <a data-navper="3" data-nav-doc="doc" style="color: #007bff" href="Shell-Windows.html">Shell-windows</a>
+                  <a data-navper="4" data-nav-doc="doc" href="#">Front-End</a>
+                  <a data-navper="5" data-nav-doc="doc" href="#">Back-End</a>
+                              </div>
+                              <a class="link-respo" href="programas.html"><i data-icons="icons-nav" class="fab fa-battle-net"></i>Programas</a>
+                             
+                             
+                                
+                          </div>
+                      </nav>
+                      <div class="center-per">
+                          <input type="checkbox" name="toggleTheme-hd2" id="toggleTheme-hd2">
+                            <b data-b="one" class="ft-color-light-per" style="margin-right:15px;">Light</b>
+                            <b data-b="two" class="ft-color-grey-per" style="margin-left:15px;">Dark</b>
+                          </div>
+            </header>
+            <div id="topPage"  class="container-fluid">
+                    <div class="row">
+                          <!-- navbar -->
+                      <nav id="navbar-2" class="col-md-2 d-none d-md-block bg-light sidebar">
+                        <div class="sidebar-sticky">
+                          <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a data-navper="0" class="nav-link" href="Documentação.html">
+                                <span data-feather="home"></span>
+                                Dashboard 
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="1" class="nav-link " href="Pentest.html">
+                                <span data-feather="file"></span>
+                                Pentest <span class="sr-only">(current)</span>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="2" class="nav-link" href="Shell.html">
+                                <span data-feather="shopping-cart"></span>
+                                Shell Unix
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="3" class="nav-link active" href="Shell-Windows.html">
+                                <span data-feather="users"></span>
+                                Shell Windows
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="4" class="nav-link" href="#">
+                                <span data-feather="bar-chart-2"></span>
+                                Front-End
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="5" class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Back-End
+                              </a>
+                            </li>
+                          </ul>
+                  
+                          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                            <span>Saved reports</span>
+                            <a class="d-flex align-items-center text-muted" href="#">
+                              <span data-feather="plus-circle"></span>
+                            </a>
+                          </h6>
+                          <ul class="nav flex-column mb-2">
+                            <li class="nav-item">
+                              <a data-navper="6" class="nav-link" href="https://github.com/Luca13-cmyk/" target="_blank">
+                                <span data-feather="file-text"></span>
+                                GitHub
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="7" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                GitHub2
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="8" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Social engagement
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a data-navper="9" class="nav-link" href="#">
+                                <span data-feather="file-text"></span>
+                                Year-end sale
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                          <h1 class="h2">Shell Windows</h1>
+                          <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group mr-2">
+                                <input type="range" name="range" id="changeValue" min="16" max="22" value="16">
+                                <div class="boxChangeOutput-per">
+                                  <output id="changeOutput">16px</output>
+
+                                </div>
+                               
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                              <span data-feather="calendar"></span>
+                              This week
+                            </button>
+                          </div>
+                        </div>
+                  
+                        <div id="ajax-content" class="bd-example">
+                          <div id="ajax">
+
+                          
+                                <h2>NETSH</h2>
+                                <span style="color: rgb(9, 155, 253);">Windows:</span> Administração de rede
+                            <section class="codes-per">
+                                   # wlan show profile  <span style="color: grey;padding-left: 10px">// Mostrar redes wireless conectadas</span>
+                            </section>
+                            <section class="codes-per">
+                                    # wlan show profile (NOME DA REDE) key=clear
+                                      <span style="color: grey;padding-left: 10px">// Mostra informações da rede conectada.</span>
+                            </section>
+                            <hr />
+                            
+                            
+                          </div>
+                          
+                        </div>
+                        <hr />
+                            <nav id="nav-bar-pentest" aria-label="Page navigation example">
+                              <ul class="pagination pagination-lg">
+                                <!-- <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                  </a>
+                                </li> -->
+                                <li class="page-item"><a data-ajax="toggle" class="page-link current" href="Pentest.html">1</a></li>
+                                <li class="page-item"><a data-ajax="toggle" class="page-link" href="Pentest-2.html">2</a></li>
+                                <li class="page-item"><a data-ajax="toggle" class="page-link" href="Pentest-3.html">3</a></li>
+                                <!-- <li class="page-item">
+                                  <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                  </a>
+                                </li> -->
+                              </ul>
+                            </nav>
+                  
+                        
+                        
+                      </main>
+                    </div>
+                  </div>
+                
+            <div class="content-scrollTop-per">
+                <a id="scrollTopLink" href="#topPage"> <i  class="fas fa-angle-double-up"></i></a>
+            </div>
+    
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js.js"></script>
+        <script src="utilies.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+        
+</body>
+</html>
