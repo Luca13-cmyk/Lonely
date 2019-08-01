@@ -2,21 +2,37 @@
     
     "SIDEBAR": [
         
-        "Documentação.html",
-        "Pentest.html",
-        "Shell.html",
-        "Shell-Windows.html",
-        "Front-End.html",
-        "Back-End.html",
+        "../DOC/Documentação.html",
+        "../DOC/Pentest.html",
+        "../DOC/Shell.html",
+        "../DOC/Shell-Windows.html",
+        "../DOC/Front-End.html",
+        "../DOC/Back-End.html",
         "https://github.com/Luca13-cmyk/",
         "#",
-        "SocialEngagement.html",
-        "#"
+        "../DOC/SocialEngagement.html"
 
     ],
     "LINKS_INDEX": [
         "HOME/Lonely.html",
         "https://github.com/Luca13-cmyk"
+    ],
+    "LINKS_TOP_BAR": [
+        "../HOME/Lonely.html",
+        "../DOC/Documentação.html",
+        "../PROGRAMAS/programas.html"
+    ],
+    "CARDS_LINKS": [
+        "https://github.com/Luca13-cmyk/Sockess-Stress/archive/master.zip",
+        "https://github.com/wi-fi-analyzer/fluxion/archive/master.zip",
+        "https://github.com/gabamnml/hoper/archive/master.zip",
+        "https://github.com/Luca13-cmyk/Shell-Script/archive/master.zip",
+        "https://github.com/Luca13-cmyk/Ferramenta-JS-CSS/archive/master.zip",
+        "https://github.com/Luca13-cmyk/AutoSettingApkIcon/archive/master.zip",
+        "https://github.com/v1s1t0r1sh3r3/airgeddon/archive/master.zip",
+        "https://github.com/sundowndev/PhoneInfoga/archive/master.zip",
+        "https://github.com/Zucccs/PhoneSploit.git",
+        "https://github.com/sherlock-project/sherlock/archive/master.zip"
     ],
     "PASSWORDS": [
         "5a88c29464d619c4176da37e2f0adbfe"

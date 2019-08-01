@@ -27,9 +27,13 @@
 {
     padding: 20px 50px;
 }
-.header2 .nav2 .container-per
+.fa-bars 
 {
-    
+    color: #fff !important;
+}
+#small_separater
+{
+    color: #fff;
 }
  i[data-icons="icons-nav"]
 {
@@ -49,10 +53,16 @@
 .header2 .nav2 .container-per .container-titulo-per  .titulo-per
 {
     margin: auto;
-    font-size: 20px;
+    font-size: 38px;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(236, 5, 5);
+    font-family: 'Euphoria Script', cursive;
 }
+.header2 .nav2 .container-per .container-titulo-per  .titulo-per h3
+{
+    font-size: 48px;
+}
+ 
 .header2 .nav2 .container-per .link-respo
 {
     line-height: 65px !important;
@@ -218,6 +228,11 @@ b[data-b="two"]
 #toggleTheme-hd2:checked::before
 {
     left: 40px;
+}
+
+#separate
+{
+    border-color: #17f09d;
 }
 
 

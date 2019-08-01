@@ -103,13 +103,19 @@
          var times;
         
           function loadDataJsonSidebar(){
-            $.getJSON('data.json')
+            $.getJSON('../JSON/data.json')
           .done(function(data){
             times = data
         
             for (i = 0; i < times["SIDEBAR"].length; i++){
                 $('a[data-navper="' + i + '"]').attr("href", times["SIDEBAR"][i])
 
+            }
+            for (i = 0; i < times["LINKS_TOP_BAR"].length; i++){
+                $('a[data-link_topbar="' + i + '"]').attr("href", times["LINKS_TOP_BAR"][i]);
+            }
+            for (i = 0; i < times["CARDS_LINKS"].length; i++){
+                $('a[data-card_links="' + i + '"]').attr("href", times["CARDS_LINKS"][i]);
             }
 
           }).fail(function(){
