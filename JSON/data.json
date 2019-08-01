@@ -34,6 +34,10 @@
         "https://github.com/Zucccs/PhoneSploit.git",
         "https://github.com/sherlock-project/sherlock/archive/master.zip"
     ],
+    "FRONT_END_LINKS": [
+        "https://github.com/Luca13-cmyk/Agoge-Theme",
+        "../themes/Agogê"
+    ],
     "PASSWORDS": [
         "5a88c29464d619c4176da37e2f0adbfe"
     ]

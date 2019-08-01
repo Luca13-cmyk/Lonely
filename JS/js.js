@@ -117,6 +117,10 @@
             for (i = 0; i < times["CARDS_LINKS"].length; i++){
                 $('a[data-card_links="' + i + '"]').attr("href", times["CARDS_LINKS"][i]);
             }
+            
+            for (i = 0; i < times["FRONT_END_LINKS"].length; i++){
+                $('a[data-front_end_links="' + i + '"]').attr("href", times["FRONT_END_LINKS"][i]);
+            }
 
           }).fail(function(){
               alert("Ñ foi possível carregar os dados json")
