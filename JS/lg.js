@@ -19,7 +19,7 @@ $(function () {
     } // getData()
 
 
-    if (localStorage.swi){
+    if (localStorage.swip){
 
         $("#login").remove();
        getData()
@@ -54,12 +54,12 @@ $(function () {
                 getData();
                 $('#aviso_switch').addClass("fnt-green")
                     .text('Destrancado');
-                    localStorage.swi = 'ok';
+                    localStorage.swip = 'ok';
             } else {
                 $('#aviso_switch').removeClass("fnt-green")
                     .text('Trancado');
                 $('a[data-link_index]').attr("href", 'INVALIDO/index.html');
-                localStorage.removeItem('swi')
+                localStorage.removeItem('swip')
             }
     
         });

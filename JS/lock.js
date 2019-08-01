@@ -1,6 +1,6 @@
 var body = document.getElementsByTagName("body")[0];
 
-localStorage.swi ? console.log("permitido") :  body.innerHTML = "<b>Acesso Negado</b>";
+localStorage.swip ? console.log("permitido") :  body.innerHTML = "<b>Acesso Negado</b>";
 
 
 var elDocument = document.documentElement;
