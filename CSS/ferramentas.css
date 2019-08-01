@@ -640,3 +640,28 @@ md-backdrop.md-opaque {
     color: grey;
     padding-left: 10px;
 }
+
+/* .............  no-js ............. */
+
+
+.no-js  body *
+{
+    display: none !important;
+
+}
+.no-js body * *
+{
+    display: none !important;
+}
+.no-js body * * *
+{
+    display: none !important;
+}
+.no-js body * * * *
+{
+    display: none !important;
+}
+.no-js body * * * * *
+{
+    display: none !important;
+}
