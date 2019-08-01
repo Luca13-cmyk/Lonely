@@ -28,7 +28,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url(img/Deadpool.jpg);
+  background-image: url(../img/Deadpool.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #000;

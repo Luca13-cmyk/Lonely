@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Parallax.js</title>
+	
+
+<style>
+	body{
+		overflow: hidden;
+		background: red;
+	}
+#root {
+  background: black;
+  height: 100vh;
+  width: 100%;
+} 
+canvas{
+
+
+  display: block;
+  margin: auto;
+  transform: translateY(25%);
+}  
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+</style>
+</head>
+<body>
+		
+	<div id="root"></div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.development.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.development.js'></script>
+	<script src='https://cdn.rawgit.com/bradley/Blotter/master/build/blotter.min.js'></script>
+	<script src='https://cdn.rawgit.com/bradley/Blotter/master/build/materials/fliesMaterial.js'></script>
+	<script id="rendered-js">
+			const Root = document.getElementById('root');
+	  
+	  var material = new Blotter.FliesMaterial();
+	  
+	  var text = new Blotter.Text("Negado", {
+		family: "Indie Flower",
+		size: 160,
+		fill: "red" });
+	  
+	  
+	  material.uniforms.uPointCellWidth.value = 0.02;
+	  material.uniforms.uPointRadius.value = 0.5;
+	  material.uniforms.uSpeed.value = 1;
+	  
+	  let options = {
+		texts: text };
+	  
+	  
+	  let blotter = new Blotter(material, options);
+	  
+	  let scope = blotter.forText(text);
+	  
+	  class App extends React.Component {
+		componentDidMount() {
+		  scope.appendTo(this.container);
+		}
+		render() {
+		  return (
+			React.createElement("div", { ref: container => this.container = container }));
+	  
+		}}
+	  
+	  
+	  ReactDOM.render(React.createElement(App, null), Root);
+			//# sourceURL=pen.js
+		  </script>
+</body>
+</html>
