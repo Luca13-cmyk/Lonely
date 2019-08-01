@@ -236,3 +236,7 @@ b[data-b="two"]
 }
 
 
+.active-per-sidebar-dev
+{
+    color: #f00202 !important;
+}

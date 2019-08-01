@@ -392,3 +392,7 @@ body {
 
   
 }
+#nessus:hover
+{
+  color: rgb(116, 3, 3);
+}

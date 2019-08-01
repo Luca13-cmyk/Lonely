@@ -191,26 +191,13 @@
             }); // end scrolltop
 
             // load PAGE
-            $(window).on("load", function(e){
-                
-                if (localStorage.theme){
-                    $("body").addClass(localStorage.theme);
 
-                }
-                if (localStorage.checkhd2){
-                    themeJ_hd2.click();
-                    
+            
+            
+           
+            // END LOAD PAGE
 
-                }
-        
-            }); // event LOAD PAGE 
 
-            $(window).on("keypress", function(e){
-                if (e.keyCode === 13){
-                    $("#enviarPass").click();
-                    
-                }
-            }); // end EVENT KEYPRESS enter login
 
             
             $(".dropdown-menu").on("click", "button[data-theme]", function(e){
@@ -232,15 +219,17 @@
 
             }); // toggle theme
             var theme_hd2 = document.getElementById("toggleTheme-hd2");
-            var themeJ_hd2 = $("#toggleTheme-hd2");
+            var body = document.getElementsByTagName("body")[0];
             function toggleTheme_h2(){
                 if (theme_hd2.checked){
-                    $("body").addClass("dark-per-theme");
+                    
+                    body.classList.add("dark-per-theme");
                     localStorage.theme = "dark-per-theme";
                     localStorage.checkhd2 = "checked";
 
                 } else {
-                    $("body").removeClass("dark-per-theme");
+                
+                    body.classList.remove("dark-per-theme");
                     localStorage.removeItem("theme", "dark-per-theme");
                     localStorage.removeItem("checkhd2", "checked");
 
@@ -248,6 +237,8 @@
                 }
             }
             theme_hd2.addEventListener("input", toggleTheme_h2, false);
+
+
             // toggle theme2
             // CLIPBOARD
 
