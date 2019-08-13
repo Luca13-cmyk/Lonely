@@ -60,6 +60,7 @@ function startStop(){
 		data=null;
 		I("startStopBtn").className="";
 		initUI();
+		
 	}else{
 		//test is not running, begin
 		I("startStopBtn").className="running";
@@ -67,9 +68,25 @@ function startStop(){
 		s.onupdate=function(data){
             uiData=data;
 		};
+		
 		s.onend=function(aborted){
             I("startStopBtn").className="";
-            updateUI(true);
+			updateUI(true);
+			var resenha = document.getElementById("resenha");
+			var Dmeter = document.getElementById("dlText");
+			var valor = Number(Dmeter.textContent);
+			if (valor < 10){
+				resenha.style.color = 'red';
+				resenha.textContent = 'Vish, pouco baixo...';
+			}
+			if (valor > 17 && valor < 25){
+				resenha.style.color = 'yellow';
+				resenha.textContent = 'Oh, meu querido. Vamos melhorar essa net ai? .-.';
+			}
+			if (valor > 25){
+				resenha.style.color = 'green';
+				resenha.textContent = 'Boa conexao !';
+			}
             if(!aborted){
                 //if testId is present, show sharing panel, otherwise do nothing
                 try{
@@ -79,13 +96,17 @@ function startStop(){
                         I("resultsImg").src=shareURL;
                         I("resultsURL").value=shareURL;
                         I("testId").innerHTML=testId;
-                        I("shareArea").style.display="";
+						I("shareArea").style.display="";
+						
+
                     }
                 }catch(e){}
             }
 		};
 		s.start();
+		
 	}
+
 }
 //this function reads the data sent back by the test and updates the UI
 function updateUI(forced){
@@ -123,6 +144,7 @@ function initUI(){
 	I("pingText").textContent="";
 	I("jitText").textContent="";
 	I("ip").textContent="";
+	
 }
 
 
@@ -130,12 +152,16 @@ function initUI(){
 <style type="text/css">
 	html,body{
 		border:none; padding:0; margin:0;
-		background:#FFFFFF;
-		color:#202020;
+		
 	}
 	body{
 		text-align:center;
 		font-family:"Roboto",sans-serif;
+		background-image: url(../img/Flowing_Ribbon.jpg);
+  		background-size: cover;
+  		background-repeat: no-repeat;
+		background-color: #000;
+		color: #fff;
 	}
 	h1{
 		color:#404040;
@@ -143,9 +169,9 @@ function initUI(){
 	#startStopBtn{
 		display:inline-block;
 		margin:0 auto;
-		color:#6060AA;
+		color:rgb(255, 255, 255);
 		background-color:rgba(0,0,0,0);
-		border:0.15em solid #6060FF;
+		border:0.15em solid rgb(255, 255, 255);
 		border-radius:0.3em;
 		transition:all 0.3s;
 		box-sizing:border-box;
@@ -154,8 +180,14 @@ function initUI(){
 		cursor:pointer;
 		box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
 	}
-	#startStopBtn:hover{
-		box-shadow: 0 0 2em rgba(0,0,0,0.1), inset 0 0 1em rgba(0,0,0,0.1);
+	#startStopBtn:hover
+	{
+		/* box-shadow: 0 0 2em rgba(0,0,0,0.1), inset 0 0 1em rgba(0,0,0,0.1); */
+		border-color: rgb(70, 206, 7);
+	}
+	#startStopBtn:hover::before
+	{
+		color: rgb(70, 206, 7);
 	}
 	#startStopBtn.running{
 		background-color:#FF3030;
@@ -164,6 +196,7 @@ function initUI(){
 	}
 	#startStopBtn:before{
 		content:"Start";
+		transition:all 0.3s;
 	}
 	#startStopBtn.running:before{
 		content:"Abort";
@@ -236,8 +269,59 @@ function initUI(){
 			margin: 0 auto;
 		}
 	}
+
+	#Lonely
+	{
+		color: rgb(209, 209, 209);
+		text-decoration: none;
+		font-size: 22px;
+	}
+	#btn-home-per
+	{
+		background-color:rgba(0, 0, 0, 0.705);
+		border:0.15em solid rgb(209, 209, 209);
+		border-radius:0.3em;
+		transition:all 0.3s;
+		box-sizing:border-box;
+		width:8em; height:3em;
+		line-height:2.7em;
+		cursor:pointer;
+		box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
+		position: relative;
+	}
+	#btn-home-per::before
+	{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: 100%;
+		width: 0;
+		background-color:rgba(0, 0, 0, 0.37);
+		transition: all 0.3s ease;
+	}
+	#btn-home-per:hover
+	{
+		border-color: #FFFFFF;
+	}
+	#btn-home-per:hover a#Lonely
+	{
+		color: #FFFFFF;
+	}
+	#btn-home-per:hover::before
+	{
+		width: 100%;
+	}
+
+
+
 </style>
-<title>HTML5 Speedtest</title>
+<title>SpeedTest</title>
+
+<!-- Favicon -->	
+<link rel="shortcut icon" href="../icon_title/icon.png" type="image/png">
+
 </head>
 <body>
 <h1 id="resenha"></h1>
@@ -282,20 +366,12 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
-	<a href="../index.html">Source code</a>
+	<button id="btn-home-per" type="button" role="button">
+		<a id="Lonely" href="../index.html">Home</a>
+	</button>
 </div>
 <script type="text/javascript">setTimeout(function(){initUI()},100);</script>
-<script src="../JS/vanilla.js"></script>
 <script>
-var resenha = document.getElementById("resenha");
-var Dmeter = document.getElementById("dlText");
-if (Number(Dmeter.textContent) < 10){
-	resenha.textContent = 'Vish, pouco baixo'
-}
-if (Number(Dmeter.textContent) > 10){
-	resenha.textContent = 'Por enquanto, ta tranquilo...'
-}
-
 
 </script>
 </body>
