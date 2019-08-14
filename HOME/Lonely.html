@@ -21,14 +21,84 @@
     
     right: 15px !important;
     
-}
+    }
+    #version-per
+    {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      right: -45px;
+      width: 300px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.452);
+      transform: rotate(40deg);
+      /* opacity: 0.6; */
+    } 
+    #version-per b a
+    {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(+20%, -50%);
+      color: black;
+    }
+
+    @media screen and (max-width: 1000px){
+      #version-per
+      {
+        /* bottom: 0; */
+        top: 97%;
+        right: -70px;
+        width: 380px;
+        transform: rotate(-750deg);
+
+      }
+      
+    }
+    @media screen and (max-width: 800px) 
+    {
+     #go-index
+      {
+        display: none;
+      }
+    }
+
+      
       </style>
+
+      <script>
+// var elem = document.getElementById("myvideo");
+// if (elem.requestFullscreen) {
+//   elem.requestFullscreen();
+// } else if (elem.msRequestFullscreen) {
+//   elem.msRequestFullscreen();
+// } else if (elem.mozRequestFullScreen) {
+//   elem.mozRequestFullScreen();
+// } else if (elem.webkitRequestFullscreen) {
+//   elem.webkitRequestFullscreen();
+// }
+      a = 10;
+      i = 0;
+      // setTimeout(function(){a = a - 1; console.log(a)}, 100);
+      // setInterval(function(){a = a - 1; console.log(a)}, 1000);
+      // setInterval(function(){
+      //   while (a > i){
+      //     a = a - 1;
+      //     console.log(a)
+      //     i--
+      //   }
+      // }, 1000)
+      </script>
+
 </head>
 <body>
-
+    <section id="version-per">
+        <b><a href="../SpeedTest" target="_blank" rel="noopener noreferrer">Speed Test</a>  </b>
+    </section>
   
     <md-backdrop class="md-opaque drawer-backdrop gf-scroll-trap"></md-backdrop>
     <div  class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        
         <header class="masthead mb-auto">
         <i class="fas fa-bars"></i>
           <div class="inner">
@@ -56,7 +126,7 @@
               <div class="container-per">
                     <div class="container-titulo-per">
                         <b class="titulo-per"><h3>
-                          L
+                          <a href="../index.html">L</a>
                         </h3></b>
                     </div>
                   <a data-link_topbar="0" class="link-respo current" href="#"><i data-icons="icons-nav" class="fas fa-home"></i>Home</a>
@@ -87,6 +157,7 @@
       </header>
       
         <main role="main" class="inner cover">
+            
          
           <div class="content-terminal">
               <div class="header-top">
@@ -99,7 +170,7 @@
               </div>
               <div class="box-code-per">
                   <section class="content-terminal-type">
-                        <b><span style="color: red">Lonely@Lonely-OEM</span>:<span style="color:aqua">~</span>$</b> <p class="bash-per" style="padding-left: 10px"></p> 
+                        <b><span style="color: rgba(255, 0, 0, 0.562)">Lonely@Lonely-OEM</span>:<span style="color:rgba(0, 255, 255, 0.658)">~</span>$</b> <p class="bash-per" style="padding-left: 10px"></p> 
                   </section>
               </div>
           </div>

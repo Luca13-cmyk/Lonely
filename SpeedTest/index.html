@@ -280,6 +280,7 @@ function initUI(){
 		text-decoration: none;
 		font-size: 22px;
 	}
+
 	#btn-home-per
 	{
 		background-color:rgba(0, 0, 0, 0.705);
@@ -309,7 +310,12 @@ function initUI(){
 	{
 		border-color: #FFFFFF;
 	}
-	#btn-home-per:hover a#Lonely
+	#btn-home-per span
+	{
+		color: rgb(209, 209, 209);
+	}
+
+	#btn-home-per:hover span
 	{
 		color: #FFFFFF;
 	}
@@ -372,9 +378,11 @@ function initUI(){
 			<img src="" id="resultsImg" />
 		</div>
 	</div>
+	<a id="Lonely" href="../index.html">
 	<button id="btn-home-per" type="button" role="button">
-		<a id="Lonely" href="../index.html">Home</a>
+		<span>Home</span>
 	</button>
+	</a>
 </div>
 <script type="text/javascript">setTimeout(function(){initUI()},100);</script>
 <script>
