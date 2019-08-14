@@ -147,6 +147,17 @@ function initUI(){
 	
 }
 
+a = 30;
+      function Regressiva(){
+        var contagem = setInterval(function(){
+          a = a - 1;
+          console.log(a);
+          if (a == 1){
+            clearInterval(contagem);
+          }
+        }, 1000)
+      }
+
 
 </script>
 <style type="text/css">
