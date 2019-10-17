@@ -35,12 +35,13 @@
 	</style>
 </head>
 <body>
+<!-- IP  -->
 	<div id="content">
 		<div id="modal">
 			<b>
 			<?php
 	
-				$ip = $_SERVER["SERVER_ADDR"];
+				$ip = $_SERVER["REMOTE_ADDR"];
 				echo "IP: <i>".$ip."<i/>";
 			?>
 			</b>
